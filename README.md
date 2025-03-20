@@ -4,7 +4,6 @@ I upload my **daily coding solutions** from **LeetCode** and **GeeksforGeeks** t
 
 ## 📌 What's in this repo?  
 ✅ Daily coding solutions  
-✅ Covers **arrays, linked lists, trees, DP, graphs, and more**  
 ✅ Written in **Python** (might use other languages sometimes)  
 
 ## 🎯 Why This Repo?  
