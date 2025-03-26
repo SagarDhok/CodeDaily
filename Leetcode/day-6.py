@@ -1,5 +1,5 @@
 
-# Merge Two Sorted Arrays In-Place
+# Merge Two Sorted Arrays In-Placed
 nums1 = [1,2,3,0,0,0]
 m = 3
 nums2 = [2,5,6]
