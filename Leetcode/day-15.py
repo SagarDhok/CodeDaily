@@ -8,7 +8,7 @@ class Solution:
                 lst.append(dict[char])
             elif not list or char!=lst.pop():
                 return False
-        return True
+        return not lst
     
 obj = Solution()
 s = input("Enter Brackets : ")
