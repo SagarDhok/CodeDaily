@@ -13,3 +13,8 @@ def searchInsert(nums, target):
             right = mid - 1
 
     return left
+
+nums = [int(i) for i in input("Enter List of Values : ").split()]
+target = int(input("Enter Which Values Index You want : "))
+res  = searchInsert(nums,target)
+print(f"Insert Position of {target} : {res}")
