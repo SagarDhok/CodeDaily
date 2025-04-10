@@ -1,20 +1,23 @@
 # Search Insert Position
 def searchInsert(nums, target):
-    left, right = 0, len(nums) - 1
+    start = 0
+    end = len(nums) - 1
+                           
+    while start <= end:   
+        mid = (start + end) // 2      
 
-    while left <= right:
-        mid = (left + right) // 2
-
-        if nums[mid] == target:
+        if target == nums[mid]:      
             return mid
-        elif nums[mid] < target:
-            left = mid + 1
+        elif target > nums[mid]:     
+            start = mid + 1           
         else:
-            right = mid - 1
+            end = mid - 1
 
-    return left
+    return start
 
-nums = [int(i) for i in input("Enter List of Values : ").split()]
-target = int(input("Enter Which Values Index You want : "))
+# nums = [int(i) for i in input("Enter List of Values : ").split()]
+# target = int(input("Enter Which Values Index You want : "))
+nums = [1,3,5,6]
+target = 2
 res  = searchInsert(nums,target)
 print(f"Insert Position of {target} : {res}")
