@@ -1,3 +1,4 @@
+#find second max from array
 class Solution:
     def getSecondLargest(self, arr):
         mv1 = float("-inf")
