@@ -1,6 +1,5 @@
 
 # Contains Duplicate
-# Array Duplicates
 arr = [1,8,4,3,6,9,5,7,2,7,0]
 
 count = {}

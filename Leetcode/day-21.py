@@ -1,4 +1,6 @@
-# Search Insert Position
+
+
+# Binary Search
 def searchInsert(nums, target):
     start = 0
     end = len(nums) - 1
