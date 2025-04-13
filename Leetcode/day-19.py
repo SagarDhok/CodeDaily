@@ -1,6 +1,5 @@
 
 def addBinary(a,b) -> str:
-    # Convert binary strings to integers
     num1 = int(a, 2)
     num2 = int(b, 2)
     
