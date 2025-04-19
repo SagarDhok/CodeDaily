@@ -10,3 +10,15 @@ array_sum = sum(nums)
 
 missing_value = s-array_sum
 print(missing_value)
+
+class Solution:
+    def missingNumber(self,nums):
+        for val in range(len(nums)+1):
+            if val in nums:
+                pass
+            else:
+                return val    
+                
+s = Solution()                
+res = s.missingNumber([3,0,1])
+print(res)
