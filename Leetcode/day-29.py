@@ -36,19 +36,21 @@
 
 
 
-
-
-class Solution:
-    def moveZeroes(self, nums) :
-       nzi = 0
-       for i in range(len(nums)) :
-           if nums[i]!= 0:
-               nums[nzi],nums[i] = nums[i],nums[nzi]
-               nzi+=1
-       return nums
+# class Solution:
+#     def moveZeroes(self, nums) :
+#        nzi = 0
+#        for i in range(len(nums)) :
+#            if nums[i]!= 0:
+#                nums[nzi],nums[i] = nums[i],nums[nzi]
+#                nzi+=1
+#        return nums
        
        
-s= Solution()
-nums = [int(i) for i in input("Enter List Of Values : ").split()]
-res = s.moveZeroes(nums)
+# s= Solution()
+# nums = [int(i) for i in input("Enter List Of Values : ").split()]
+# res = s.moveZeroes(nums)
+# print(res)
+
+nums = [0, 1, 0, 3, 12]
+res = [x for x in nums if x != 0] + [0] * nums.count(0)
 print(res)
