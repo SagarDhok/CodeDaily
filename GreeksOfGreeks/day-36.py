@@ -1,5 +1,5 @@
 
-
+# Binary Array Sorting
 def binSort(arr):
     zero_count = arr.count(0)
     for i in range(len(arr)):
@@ -10,6 +10,7 @@ def binSort(arr):
     print(arr)
 
 binSort([1, 0, 1, 1, 0])
+
 
 def binSort(arr):
     left = 0

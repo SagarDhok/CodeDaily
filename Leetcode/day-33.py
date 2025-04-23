@@ -1,6 +1,5 @@
 
-
-
+# "Greedy Algorithm: Assign Cookies to Maximize Content Children"
 class Solution:
     def findContentChildren(self, g, s) :
         g.sort()
