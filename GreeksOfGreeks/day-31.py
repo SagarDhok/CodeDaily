@@ -37,7 +37,7 @@ while i < len(commands):
             output.append(result)
     i += 1
 
-print("Pop results:", " ".join(map(str, output)))
+print("Pop results : ", " ".join(map(str, output)))
 
 
 
