@@ -10,7 +10,7 @@ class Solution:
         count = 0
 
         while i < len(g) and j < len(s):
-            if s[j] >= g[i]:
+            if g[i]<=  s[j]:
                 count += 1
                 i += 1
             j += 1
@@ -19,4 +19,5 @@ class Solution:
 
 sol = Solution()
 print(sol.findContentChildren([1, 2, 3], [1, 1]))  
-print(sol.findContentChildren([1, 2], [1, 2, 3])) 
+print(sol.findContentChildren([1, 3], [1, 2, 3])) 
+

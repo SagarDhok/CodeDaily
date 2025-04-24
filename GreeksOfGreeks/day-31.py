@@ -38,3 +38,7 @@ while i < len(commands):
     i += 1
 
 print("Pop results:", " ".join(map(str, output)))
+
+
+
+

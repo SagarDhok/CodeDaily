@@ -42,4 +42,4 @@ def binSort(arr):
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     print(arr)
 
-binSort([1, 0, 1, 1, 0])
+binSort([1, 0, 1,0 ,1, 1])
