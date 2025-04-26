@@ -16,5 +16,4 @@ class Solution:
         
         return res
 
-sol = Solution()
 print(sol.nextGreaterElement([4,1,2], [1,3,4,2])) 
