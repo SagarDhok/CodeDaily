@@ -1,4 +1,3 @@
-
 # Last index of One
 class Solution:
     def lastIndex(self, s: str) -> int:
