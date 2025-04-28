@@ -1,5 +1,5 @@
 
-# Add Digits
+#! Add Digits
 #APPRAOCH - 1
 class Solution:
     def addDigits(self, num: int) -> int:
@@ -20,3 +20,13 @@ print(s.addDigits(38))
 print(s.addDigits(0)) 
 
 
+#APPRAOCH - 2
+class Solution:
+    def addDigits(self, num):
+        while num >= 10:
+            num = sum(int(digit) for digit in str(num))  
+        return num
+
+s = Solution()
+print(s.addDigits(38))  
+print(s.addDigits(0))   
