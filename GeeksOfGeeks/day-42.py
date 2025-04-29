@@ -1,5 +1,6 @@
 
 #! Replace all 0's with 5
+#APPROACH -1
 class Solution: 
     def convertFive(self, n):
      if n == 0:
@@ -18,3 +19,17 @@ class Solution:
 n = int(input("Enter Number : "))
 s = Solution()
 print(s.convertFive(n))
+
+
+
+#APPROACH -2
+n = str(1004)
+s = ""
+for i in n:
+  if i =="0":
+    s = s+"5"
+  else: 
+    s = s+i
+res = (int(s))
+print(res)
+ 
