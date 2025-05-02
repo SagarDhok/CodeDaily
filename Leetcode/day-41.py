@@ -1,5 +1,5 @@
 
-
+# Ugly Number
 class Solution:
     def isUgly(self, n):
         if n <= 0:
