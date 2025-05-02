@@ -1,5 +1,6 @@
 
 #! Display longest name
+#APPRAOCH -1 
 class Solution:
     def longest(self, arr):
         max_len = 0
@@ -17,6 +18,7 @@ print(s.longest(["Apple", "Mango", "Orange", "Banana"]))
 
 
 
+#APPRAOCH -2
 class Solution:
     def longest(self, arr):
         max_length = 0
