@@ -11,3 +11,11 @@ class Solution:
             freq[ord(ch) - ord('a')] -= 1
             if freq[ord(ch) - ord('a')] < 0:
                 return ch
+s = "a"
+t = "aa"
+sol = Solution()
+print(sol.findTheDifference(s, t)) 
+
+s = "abcd"
+t = "abcde"
+print(sol.findTheDifference(s, t)) 
