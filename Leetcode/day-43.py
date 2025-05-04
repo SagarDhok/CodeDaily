@@ -7,3 +7,6 @@ def isSubsequence(self, s: str, t: str) -> bool:
             return i == len(s)
 print(isSubsequence("abc", "ahbgdc"))  
 print(isSubsequence("axc", "ahbgdc"))  
+
+
+
