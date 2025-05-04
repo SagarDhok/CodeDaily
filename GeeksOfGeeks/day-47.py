@@ -1,5 +1,4 @@
 
-# Swap kth elements
 class Solution:
     def swapKth(self, arr, k):
         
