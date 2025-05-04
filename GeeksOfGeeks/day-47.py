@@ -1,6 +1,6 @@
 
 # Swap kth elements
-
+#APPROACH -1
 class Solution:
     def swapKth(self, arr, k):
         
@@ -18,6 +18,7 @@ print(s.swapKth(arr,k))
 
 
 
+#APPROACH -2
 class Solution:
     def swapKth(self, arr, k):
         temp = arr[k - 1]
