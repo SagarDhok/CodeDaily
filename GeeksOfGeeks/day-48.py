@@ -1,5 +1,4 @@
 
-# Find element at a given Index
 class Solution:
     def findElementAtIndex(self,key, arr ):
         # code here
