@@ -15,5 +15,4 @@ print(s.firstIndex(arr))
 
                 
 arr = [0, 0, 0, 0]
-s =Solution()
 print(s.firstIndex(arr))
