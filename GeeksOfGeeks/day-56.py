@@ -12,3 +12,5 @@ def maximumAdjacent(arr):
 
 print(maximumAdjacent([1,2,2,3,4,5]))
 print(maximumAdjacent([5,5]))
+
+
