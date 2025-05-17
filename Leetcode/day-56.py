@@ -1,5 +1,5 @@
 
-
+# To Lower Case
 class Solution:
     def toLowerCase(self, s: str) -> str:
         k=""
