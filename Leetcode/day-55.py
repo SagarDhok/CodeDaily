@@ -1,6 +1,5 @@
 
 
-
 # Pow(x, n)
 
 class Solution:
