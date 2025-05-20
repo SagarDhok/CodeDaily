@@ -14,12 +14,3 @@
 # print(s.findNumbers([12,345,2,6,7896]))
 # print(s.findNumbers([555,901,482,1771]))
 
-numbers = [12, 345, 2, 6, 7896]
-digit_counts = [0] * len(numbers) 
-for i in numbers:
-   count = 0
-   n= i
-   while n>0:
-      n = n//10
-      count +=1
-      digit_counts[i] = count 
