@@ -1,5 +1,6 @@
 
-# Mega Sale
+# Mega Salee
+
 class Solution:
     def maxProfit(self, m, arr):
      usless_laptop = [i for i in arr if i<0]
