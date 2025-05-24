@@ -1,5 +1,6 @@
 
 
+# Smallest number repeating K times
 class Solution:
     def findDuplicate(self, arr, k):
         d = {}
