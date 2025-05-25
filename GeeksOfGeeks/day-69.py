@@ -1,8 +1,6 @@
 
 
-
-
-
+# Make a Distinct Digit Array
 class Solution:
    def common_digits(self, nums):
         st =set()
