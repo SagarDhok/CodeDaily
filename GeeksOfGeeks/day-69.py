@@ -1,6 +1,5 @@
 
 
-# Make a Distinct Digit Array
 
 
 
