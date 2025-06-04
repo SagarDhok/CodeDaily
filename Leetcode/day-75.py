@@ -26,5 +26,10 @@ class Solution:
         return result
 
 
-
-# djllslm
+sol = Solution()
+print(sol.insert([[1, 3], [6, 9]], [2, 5]))
+print(sol.insert([[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]], [4, 8]))
+print(sol.insert([], [5, 7]))
+print(sol.insert([[1, 5]], [2, 3]))
+print(sol.insert([[1, 5]], [2, 7]))
+print(sol.insert([[1, 5]], [6, 8]))
