@@ -1,6 +1,5 @@
 
 
-#  Search in Rotated Sorted Array
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
         low = 0
