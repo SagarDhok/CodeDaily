@@ -1,6 +1,6 @@
 
 
-
+# N-Queens
 class Solution:
     def solveNQueens(self, n) :
         res = []
