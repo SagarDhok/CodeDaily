@@ -13,3 +13,5 @@ class Solution:
 s = Solution()
 
 print(s.arrayPairSum([int(i) for i in input("Enter Values : ").split()]))
+
+
