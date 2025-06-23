@@ -1,6 +1,8 @@
 
 
 
+
+# 599. Minimum Index Sum of Two Lists
 class Solution:
     def findRestaurant(self, list1,list2):
         res  = {}
