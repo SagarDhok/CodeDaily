@@ -19,6 +19,9 @@ class Solution:
     return sum(stack)
 
 
+
+
+
 s = Solution()
 print(s.calPoints(["5","2","C","D","+"]))          
 print(s.calPoints(["5","-2","4","C","D","9","+","+"]))  
