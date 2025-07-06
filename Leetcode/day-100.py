@@ -3,7 +3,7 @@
 
 #! 18. 4Sum
 class Solution:
- def fourSum(nums, target):
+ def fourSum(self,nums, target):
     nums.sort()
     n = len(nums)
     res = []
