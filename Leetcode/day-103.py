@@ -1,5 +1,5 @@
 
-#!  Min Cost Climbing Stairs
+#! 746. Min Cost Climbing Stairs
 class Solution:
     def minCostClimbingStairs(self, cost) :
             n = len(cost)
