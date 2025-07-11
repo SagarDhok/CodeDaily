@@ -2,14 +2,15 @@
 #! 746. Min Cost Climbing Stairs
 class Solution:
     def minCostClimbingStairs(self, cost) :
-            n = len(cost)
-            a,b = cost[0],cost[1]
-            for i in range(2,n):
-                  curr = cost[i]+min(a,b)
-                  a,b = b,curr
+        cost.append(0)
 
-            return min(a,b)
-    
+        for i in range(len(cost)-3,-1,-1):
+            cost[i] += min(cost[i+1],cost[i+2])
+
+        print(cost)
+        return min(cost[0],cost[1])
+
+
 s = Solution()
 cost = [10,15,20]
 print(s.minCostClimbingStairs(cost))
