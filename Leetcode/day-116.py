@@ -9,3 +9,11 @@ class Solution:
         yz = sum(max(row) for row in grid)
         zx = sum(max(grid[i][j] for i in range(n)) for j in range(n))
         return xy + yz + zx
+    
+s = Solution()
+grid = [[1,2],[3,4]]
+print(s.projectionArea(grid)) 
+grid = [[1,0],[0,2]]
+print(s.projectionArea(grid)) 
+grid = [[2]]
+print(s.projectionArea(grid)) 
