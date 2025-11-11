@@ -1,7 +1,6 @@
 
 
 #! Array Searching
-
 class Solution:
     def search(self,arr, x):
         
