@@ -22,3 +22,6 @@ print(s.findUnion(a,b))
 a = [1, 2, 1, 1, 2]
 b = [2, 2, 1, 2, 1] 
 print(s.findUnion(a,b))
+
+
+
