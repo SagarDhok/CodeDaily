@@ -82,3 +82,35 @@ else:
     print(True)
 
 
+
+#! 3. First Unique Character in a String
+# Return the index of the first non-repeating character.
+# If none exists, return -1.
+# Example:
+# "leetcode" → 0
+
+s = "leetcode"
+count = {}
+for ch in s:
+    if ch in count:
+        count[ch] += 1
+    else:
+        count[ch] = 1
+for i in range(len(s)):
+    if count[s[i]] == 1:
+        print(i)
+        break
+else:
+    print(-1)
+
+
+s = "leetcode"
+count = {}
+for ch in s:
+    count[ch] = count.get(ch, 0) + 1
+for i in range(len(s)):
+    if count[s[i]] == 1:
+        print(i)
+        break
+else:
+    print(-1)
