@@ -43,7 +43,6 @@ while left<right:
 else:
     print(True)
 
-#* Without Built in Funtion
 s = "A man, a plan, a canal: Panama"
 left = 0
 right = len(s) - 1
@@ -114,3 +113,30 @@ for i in range(len(s)):
         break
 else:
     print(-1)
+
+
+#! 4. Valid Anagram
+# Return True if one string is an anagram of another.
+# Example:
+# "anagram", "nagaram" → True
+s = "anagram"
+t = "nagaram"
+
+if len(s) != len(t):
+    print(False)
+else:
+    count = {}
+
+    for ch in s:
+        count[ch] = count.get(ch, 0) + 1
+
+    for ch in t:
+        if ch not in count:
+            print(False)
+            break
+        count[ch] -= 1
+        if count[ch] < 0:
+            print(False)
+            break
+    else:
+        print(True)
