@@ -122,6 +122,10 @@ else:
 s = "anagram"
 t = "nagaram"
 
+s = "aab"
+t = "abb"
+
+
 if len(s) != len(t):
     print(False)
 else:
@@ -140,3 +144,34 @@ else:
             break
     else:
         print(True)
+
+
+s = "anagram"
+t = "nagaram"
+print(sorted(s) == sorted(t))
+
+
+
+#! 5. Longest Common Prefix
+# Find the longest common prefix among an array of strings.
+# Example:
+# ["flower","flow","flight"] → "fl"
+
+strs = ["flower", "flow", "flight"]
+
+if not strs:
+    print("")
+else:
+    prefix = ""
+
+    for i in range(len(strs[0])):  
+        char = strs[0][i]
+
+        for word in strs[1:]:
+            if i >= len(word) or word[i] != char:
+                print(prefix)
+                exit()
+
+        prefix += char
+
+    print(prefix)
