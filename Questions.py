@@ -156,22 +156,63 @@ print(sorted(s) == sorted(t))
 # Find the longest common prefix among an array of strings.
 # Example:
 # ["flower","flow","flight"] → "fl"
+def longest_common_prefix(strs):
+    if not strs:
+        return ""
+
+    prefix = ""
+    for i in range(len(strs[0])):
+        char = strs[0][i]
+        for word in strs[1:]:
+            if i >= len(word) or word[i] != char:
+                return prefix
+        prefix += char
+    return prefix
+
+print(longest_common_prefix(["flower", "flow", "flight"]))
+
+
 
 strs = ["flower", "flow", "flight"]
 
-if not strs:
-    print("")
-else:
-    prefix = ""
+prefix = strs[0]
 
-    for i in range(len(strs[0])):  
-        char = strs[0][i]
+for s in strs[1:]:
+    while not s.startswith(prefix):
+        prefix = prefix[:-1]
+        if not prefix:
+            break
 
-        for word in strs[1:]:
-            if i >= len(word) or word[i] != char:
-                print(prefix)
-                exit()
+print(prefix)
 
-        prefix += char
 
-    print(prefix)
+#! 📦 ARRAYS
+# 6. Two Sum
+
+# Return indices of two numbers that add up to a vtarget.
+
+# Example:
+# [2,7,11,15], target = 9 → [0,1]
+
+arr = [2, 7, 11, 15]
+target = 9
+
+for i in range(len(arr)):
+    for j in range(i + 1, len(arr)):
+        if arr[i] + arr[j] == target:
+            print(i, j)
+
+
+arr = [2, 7, 11, 15]
+target = 9
+
+seen = {}
+
+for i, num in enumerate(arr):
+    need = target - num
+
+    if need in seen:
+        print(seen[need], i)
+        break
+
+    seen[num] = i
