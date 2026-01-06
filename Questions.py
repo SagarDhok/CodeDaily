@@ -216,3 +216,41 @@ for i, num in enumerate(arr):
         break
 
     seen[num] = i
+
+
+#! 7. Contains Duplicate
+
+# Return True if any value appears at least twice.
+
+# Example:
+# [1,2,3,1] → True
+
+lst = [1, 2, 3, 1]
+
+count = {}
+for i in lst:
+    if i in count:
+        count[i] += 1
+    else:
+        count[i] = 1
+
+for val in count:
+    if count[val] >= 2:
+        print(True)
+        break
+else:
+    print(False)
+
+
+lst = [1, 2, 3, 1]
+print(len(lst) != len(set(lst)))
+
+lst = [1, 2, 3, 1]
+seen = set()
+for i in lst:
+    if i in seen:
+        print(True)
+        break
+    seen.add(i)
+else:
+    print(False)
