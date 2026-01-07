@@ -254,3 +254,35 @@ for i in lst:
     seen.add(i)
 else:
     print(False)
+
+
+#! 8. Move Zeroes
+
+# Move all zeroes to the end while maintaining order.
+
+# Example:
+# [0,1,0,3,12] → [1,3,12,0,0]
+
+
+lst = [0,1,0,3,12]
+pos = 0
+
+for i in range(len(lst)):
+    if lst[i]!=0:
+        lst[pos]=lst[i]
+        pos+=1
+
+for i in range(pos, len(lst)):
+    lst[i] = 0
+print(lst)
+
+
+arr = [0, 1, 0, 3, 12]
+result = []
+for x in arr:
+    if x != 0:
+        result.append(x)
+zeros = len(arr) - len(result)
+result.extend([0] * zeros)
+
+print(result)
