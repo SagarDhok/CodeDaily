@@ -286,3 +286,24 @@ for z in range(zeros):
 print(result)
 
 
+#! 9. Best Time to Buy and Sell Stock
+# Return maximum profit from one buy and one sell.
+# Example:
+# [7,1,5,3,6,4] → 5
+
+lst =  [7,1,5,3,6,4] 
+
+if len(lst)<=1:
+    print(0)
+else:
+    min_price = lst[0]
+    max_price = 0
+    for price in lst:
+        if price<min_price:
+            min_price=price
+
+        profit = price-min_price
+        if profit>max_price:
+            max_price= profit
+    print(max_price)
+    
