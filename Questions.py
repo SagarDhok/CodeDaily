@@ -307,3 +307,31 @@ else:
             max_price= profit
     print(max_price)
     
+
+#! 10. Merge Sorted Array
+# Merge two sorted arrays into one sorted array in-place.
+
+# Example:
+# [1,2,3,0,0,0] + [2,5,6] → [1,2,2,3,5,6]
+a = [1,2,3,0,0,0]
+b = [2,5,6] 
+
+
+def merge(a, m, b, n):
+    i = m - 1
+    j = n - 1
+    k = m + n - 1
+
+    while i >= 0 and j >= 0:
+        if a[i] > b[j]:
+            a[k] = a[i]
+            i -= 1
+        else:
+            a[k] = b[j]
+            j -= 1
+        k -= 1
+
+    while j >= 0:
+        a[k] = b[j]
+        j -= 1
+        k -= 1
