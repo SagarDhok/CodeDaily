@@ -316,7 +316,6 @@ else:
 
 a = [1, 2, 3, 0, 0, 0]
 b = [2, 5, 6]
-
 m = 3
 n = 3
 
@@ -347,3 +346,35 @@ m =3
 a[m:] = b
 a.sort()
 print(a)
+
+
+#! 11. Majority Element
+
+# Find the element that appears more than ⌊n/2⌋ times.
+
+# Example:
+# [3,2,3] → 3
+
+
+lst = [3,2,3]
+ele = len(lst)//2
+
+count = {}
+for i in lst:
+        count[i] = count.get(i, 0) + 1
+
+for val in count:
+    if count[val]>ele:
+        print(val)
+
+#!Boyer Moore 
+lst = [3, 2, 3]
+candidate = None
+count = 0
+
+for num in lst:
+    if count == 0:
+        candidate = num
+    count += 1 if num == candidate else -1
+
+print(candidate)
