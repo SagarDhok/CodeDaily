@@ -378,3 +378,30 @@ for num in lst:
     count += 1 if num == candidate else -1
 
 print(candidate)
+
+#! 12. Intersection of Two Arrays
+# Return the intersection of two arrays (unique elements).
+# Example:
+# [1,2,2,1], [2,2] → [2]
+
+lst1 = [1,2,2,1]
+lst2 = [2,2]
+
+common_element = set()
+for i in lst1:
+    if i in lst2:
+        common_element.add(i)
+
+print(common_element)
+
+
+lst1 = [1,2,2,1]
+lst2 = [2,2]
+set2 = set(lst2)
+common_element = set()
+
+for i in lst1:
+    if i in set2:
+        common_element.add(i)
+
+print(common_element)
