@@ -417,15 +417,11 @@ k = 2
 
 dct = {}
 for i in nums:
-    if i in dct:
-        dct[i]+=1
-    else:
-        dct[i]=1
+    dct[i] = dct.get(i, 0) + 1
 
-sortdic = dict(sorted(dct.items()))
+sorted_items = sorted(dct.items(), key=lambda x: x[1], reverse=True)
 
-
-result = [key for key, value in list(dct.items())[:k]]
+result = [key for key in sorted_items[:k]]
 print(result)
 
 
