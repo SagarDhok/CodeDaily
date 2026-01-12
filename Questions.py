@@ -427,3 +427,6 @@ sortdic = dict(sorted(dct.items()))
 
 result = [key for key, value in list(dct.items())[:k]]
 print(result)
+
+
+
