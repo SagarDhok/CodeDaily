@@ -405,3 +405,25 @@ for i in lst1:
         common_element.add(i)
 
 print(common_element)
+
+
+#! 13. Top K Frequent Elements
+# Return the k most frequent elements.
+# Example:
+# [1,1,1,2,2,3], k=2 → [1,2]
+
+nums = [1, 1, 1, 2, 2, 3]
+k = 2
+
+dct = {}
+for i in nums:
+    if i in dct:
+        dct[i]+=1
+    else:
+        dct[i]=1
+
+sortdic = dict(sorted(dct.items()))
+
+
+result = [key for key, value in list(dct.items())[:k]]
+print(result)
