@@ -426,5 +426,34 @@ print(result)
 
 
 
+#! 📚 STACK
+# 14. Valid Parentheses
+
+# Check if parentheses are valid.
+
+# Example:
+# "()[]{}" → True
+
+def isValid(s):
+    stack = []
+    closeToOpen = {')':'(', ']':'[', '}':'{'}
+
+    for c in s:
+        if c in closeToOpen:
+            if not stack or stack[-1] != closeToOpen[c]:
+                return False
+            stack.pop()
+        else:
+            stack.append(c)
+
+    return not stack
 
 
+print(isValid("()[]{}"))  
+print(isValid("([)]"))       
+print(isValid("{[]}"))      
+print(isValid("((("))        
+
+
+
+     
