@@ -1,16 +1,36 @@
 # 🔥 Daily DSA Practice – LeetCode & GFG
 
-I upload my daily coding solutions from LeetCode and GeeksforGeeks to stay consistent and improve my problem-solving skills. My goal is to be in the top 1% of programmers. 🚀
+This repository contains my **daily Data Structures & Algorithms (DSA) practice solutions** from **LeetCode** and **GeeksforGeeks**.  
+The goal is to stay consistent, improve problem-solving skills, and prepare effectively for technical interviews.
 
-## 📌 What's in this repo?
+My long-term aim is to reach the **top 1% of programmers** 🚀
 
-- ✅ **Daily coding solutions**
-- ✅ **Written in Python** (might use other languages sometimes)
 
-## 🎯 Why This Repo?
+## 📌 Repository Overview
 
-This repo helps me track my progress and stay motivated. Feel free to check out the solutions, suggest improvements, or discuss problems!
+- ✅ Daily DSA coding solutions
+- ✅ Interview-oriented problem solving
+- ✅ **`Questions.py`**
+  - Contains **important interview preparation questions**
+  - Focused on frequently asked coding problems
+- ✅ Solutions written mainly in **Python**
+  - Other languages may be used occasionally
+
+
+## 🎯 Purpose of This Repository
+
+- Track daily coding consistency
+- Build a strong DSA foundation for interviews
+- Improve logical thinking and coding efficiency
+- Maintain a structured revision of important problems
+
+
+## 🤝 Contributions & Feedback
+
+Suggestions, improvements, and discussions are always welcome.  
+Feel free to explore the solutions or share better approaches.
+
 
 ## 🔗 Connect With Me
 
-Let’s grow together! 🚀
+Let’s grow together and crack coding interviews 🚀🔥
