@@ -459,6 +459,7 @@ print(isValid("((("))
 #! 15. Min Stack
 # Design a stack that supports retrieving the minimum element in O(1).
 
+#* “We push (value, min_so_far) because when elements are popped, the minimum might be removed. Storing the minimum at each step ensures getMin() stays O(1) without recalculation.”
 class MinStack:
     def __init__(self):
         self.stack = []
