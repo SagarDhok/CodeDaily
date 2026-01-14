@@ -445,7 +445,6 @@ def isValid(s):
             stack.pop()
         else:
             stack.append(c)
-
     return not stack
 
 
@@ -456,4 +455,43 @@ print(isValid("((("))
 
 
 
-     
+
+#! 15. Min Stack
+# Design a stack that supports retrieving the minimum element in O(1).
+
+class MinStack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, val):
+        if not self.stack:
+            self.stack.append((val, val))
+        else:
+            current_min = min(val, self.stack[-1][1])
+            self.stack.append((val, current_min))
+
+    def pop(self):
+        self.stack.pop()
+
+    def top(self):
+        return self.stack[-1][0]
+
+    def getMin(self):
+        return self.stack[-1][1]
+
+
+s = MinStack()
+s.push(5)
+s.push(3)
+s.push(7)
+
+print(s.top())     # 7
+print(s.getMin())  # 3
+
+s.pop()
+print(s.getMin())  # 3
+
+s.pop()
+
+print(s.getMin())  # 5
+
