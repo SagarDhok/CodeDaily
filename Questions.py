@@ -407,7 +407,7 @@ for i in lst1:
 print(common_element)
 
 
-#! 13. Top K Frequent Elements
+#? 13. Top K Frequent Elements
 # Return the k most frequent elements.
 # Example:
 # [1,1,1,2,2,3], k=2 → [1,2]
@@ -496,3 +496,29 @@ s.pop()
 
 print(s.getMin())  # 5
 
+
+
+#? 🔗 LINKED LIST
+# 16. Reverse Linked List
+# Reverse a singly linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def reverseList(head) :
+    prev = None
+    curr = head
+
+    while curr:
+        nxt = curr.next      
+        curr.next = prev     
+        prev = curr         
+        curr = nxt          
+
+    return prev
+
+head = ListNode(1)
+head.next = ListNode(2)
+head.next.next = ListNode(3)
+head.next.next.next = ListNode(4)
