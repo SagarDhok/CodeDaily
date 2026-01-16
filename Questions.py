@@ -496,17 +496,7 @@ s.pop()
 
 print(s.getMin())  # 5
 
-
-
-#? 🔗 LINKED LIST
-# 16. Reverse Linked List
-# Reverse a singly linked list.
-
-
-# 18. Merge Two Sorted Lists
-# Merge two sorted linked lists.
-
-#! 19. Factorial (Recursion)
+#! 16. Factorial (Recursion)
 # Compute factorial using recursion.
 
 #Normal Factorial
@@ -525,3 +515,6 @@ def fact(n):
 
 n = int(input())
 print(fact(n))
+
+
+
