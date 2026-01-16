@@ -522,3 +522,26 @@ head = ListNode(1)
 head.next = ListNode(2)
 head.next.next = ListNode(3)
 head.next.next.next = ListNode(4)
+
+# 18. Merge Two Sorted Lists
+# Merge two sorted linked lists.
+
+#! 19. Factorial (Recursion)
+# Compute factorial using recursion.
+
+#Normal Factorial
+n = int(input("Enter A Value : "))
+fact = 1
+for i in range(1, n+1):
+    fact = fact * i
+print(fact)
+
+
+# Factorial using Recursion (Python)
+def fact(n):
+    if n == 0:
+        return 1
+    return n * fact(n-1)
+
+n = int(input())
+print(fact(n))
