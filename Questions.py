@@ -4,19 +4,19 @@
 # Example:
 # ["h","e","l","l","o"] → ["o","l","l","e","h"]
 
-s = ["h","e","l","l","o"]
-reversed_s = s[::-1]
-print(reversed_s)
+# s = ["h","e","l","l","o"]
+# reversed_s = s[::-1]
+# print(reversed_s)
 
-s= ["h","e","l","l","o"]
-left = 0
-right= len(s)-1
-while left<right:
-    s[left],s[right] = s[right],s[left]
-    left+=1
-    right-=1
+# s= ["h","e","l","l","o"]
+# left = 0
+# right= len(s)-1
+# while left<right:
+#     s[left],s[right] = s[right],s[left]
+#     left+=1
+#     right-=1
 
-print(s)
+# print(s)
 
 
 #! 2. Valid Palindrome
@@ -24,61 +24,61 @@ print(s)
 # Example:
 # "A man, a plan, a canal: Panama" → True
 
-s = "A man, a plan, a canal: Panama"
-left = 0
-right = len(s)-1
-while left<right:
-    while left<right and not s[left].isalnum():
-        left+=1
+# s = "A man, a plan, a canal: Panama"
+# left = 0
+# right = len(s)-1
+# while left<right:
+#     while left<right and not s[left].isalnum():
+#         left+=1
 
-    while left<right and not s[right].isalnum():
-        right-=1
+#     while left<right and not s[right].isalnum():
+#         right-=1
     
-    if s[left].lower()!=s[right].lower():
-        print(False)
-        break
-    left+=1
-    right-=1
+#     if s[left].lower()!=s[right].lower():
+#         print(False)
+#         break
+#     left+=1
+#     right-=1
 
-else:
-    print(True)
+# else:
+#     print(True)
 
-s = "A man, a plan, a canal: Panama"
-left = 0
-right = len(s) - 1
-while left < right:
-    while left < right and not (
-        ('a' <= s[left] <= 'z') or
-        ('A' <= s[left] <= 'Z') or
-        ('0' <= s[left] <= '9')
-    ):
-        left += 1
+# s = "A man, a plan, a canal: Panama"
+# left = 0
+# right = len(s) - 1
+# while left < right:
+#     while left < right and not (
+#         ('a' <= s[left] <= 'z') or
+#         ('A' <= s[left] <= 'Z') or
+#         ('0' <= s[left] <= '9')
+#     ):
+#         left += 1
 
-    while left < right and not (
-        ('a' <= s[right] <= 'z') or
-        ('A' <= s[right] <= 'Z') or
-        ('0' <= s[right] <= '9')
-    ):
-        right -= 1
+#     while left < right and not (
+#         ('a' <= s[right] <= 'z') or
+#         ('A' <= s[right] <= 'Z') or
+#         ('0' <= s[right] <= '9')
+#     ):
+#         right -= 1
 
-    left_char = s[left]
-    right_char = s[right]
+#     left_char = s[left]
+#     right_char = s[right]
 
-    if 'A' <= left_char <= 'Z':
-        left_char = chr(ord(left_char) + 32)
+#     if 'A' <= left_char <= 'Z':
+#         left_char = chr(ord(left_char) + 32)
 
-    if 'A' <= right_char <= 'Z':
-        right_char = chr(ord(right_char) + 32)
+#     if 'A' <= right_char <= 'Z':
+#         right_char = chr(ord(right_char) + 32)
 
-    if left_char != right_char:
-        print(False)
-        break
+#     if left_char != right_char:
+#         print(False)
+#         break
 
-    left += 1
-    right -= 1
+#     left += 1
+#     right -= 1
 
-else:
-    print(True)
+# else:
+#     print(True)
 
 
 
@@ -88,67 +88,67 @@ else:
 # Example:
 # "leetcode" → 0
 
-s = "leetcode"
-count = {}
-for ch in s:
-    if ch in count:
-        count[ch] += 1
-    else:
-        count[ch] = 1
-for i in range(len(s)):
-    if count[s[i]] == 1:
-        print(i)
-        break
-else:
-    print(-1)
+# s = "leetcode"
+# count = {}
+# for ch in s:
+#     if ch in count:
+#         count[ch] += 1
+#     else:
+#         count[ch] = 1
+# for i in range(len(s)):
+#     if count[s[i]] == 1:
+#         print(i)
+#         break
+# else:
+#     print(-1)
 
 
-s = "leetcode"
-count = {}
-for ch in s:
-    count[ch] = count.get(ch, 0) + 1
-for i in range(len(s)):
-    if count[s[i]] == 1:
-        print(i)
-        break
-else:
-    print(-1)
+# s = "leetcode"
+# count = {}
+# for ch in s:
+#     count[ch] = count.get(ch, 0) + 1
+# for i in range(len(s)):
+#     if count[s[i]] == 1:
+#         print(i)
+#         break
+# else:
+#     print(-1)
 
 
 #! 4. Valid Anagram
 # Return True if one string is an anagram of another.
 # Example:
 # "anagram", "nagaram" → True
-s = "anagram"
-t = "nagaram"
+# s = "anagram"
+# t = "nagaram"
 
-s = "aab"
-t = "abb"
-
-
-if len(s) != len(t):
-    print(False)
-else:
-    count = {}
-
-    for ch in s:
-        count[ch] = count.get(ch, 0) + 1
-
-    for ch in t:
-        if ch not in count:
-            print(False)
-            break
-        count[ch] -= 1
-        if count[ch] < 0:
-            print(False)
-            break
-    else:
-        print(True)
+# s = "aab"
+# t = "abb"
 
 
-s = "anagram"
-t = "nagaram"
-print(sorted(s) == sorted(t))
+# if len(s) != len(t):
+#     print(False)
+# else:
+#     count = {}
+
+#     for ch in s:
+#         count[ch] = count.get(ch, 0) + 1
+
+#     for ch in t:
+#         if ch not in count:
+#             print(False)
+#             break
+#         count[ch] -= 1
+#         if count[ch] < 0:
+#             print(False)
+#             break
+#     else:
+#         print(True)
+
+
+# s = "anagram"
+# t = "nagaram"
+# print(sorted(s) == sorted(t))
 
 
 
@@ -156,34 +156,34 @@ print(sorted(s) == sorted(t))
 # Find the longest common prefix among an array of strings.
 # Example:
 # ["flower","flow","flight"] → "fl"
-def longest_common_prefix(strs):
-    if not strs:
-        return ""
+# def longest_common_prefix(strs):
+#     if not strs:
+#         return ""
 
-    prefix = ""
-    for i in range(len(strs[0])):
-        char = strs[0][i]
-        for word in strs[1:]:
-            if i >= len(word) or word[i] != char:
-                return prefix
-        prefix += char
-    return prefix
+#     prefix = ""
+#     for i in range(len(strs[0])):
+#         char = strs[0][i]
+#         for word in strs[1:]:
+#             if i >= len(word) or word[i] != char:
+#                 return prefix
+#         prefix += char
+#     return prefix
 
-print(longest_common_prefix(["flower", "flow", "flight"]))
+# print(longest_common_prefix(["flower", "flow", "flight"]))
 
 
 
-strs = ["flower", "flow", "flight"]
+# strs = ["flower", "flow", "flight"]
 
-prefix = strs[0]
+# prefix = strs[0]
 
-for s in strs[1:]:
-    while not s.startswith(prefix):
-        prefix = prefix[:-1]
-        if not prefix:
-            break
+# for s in strs[1:]:
+#     while not s.startswith(prefix):
+#         prefix = prefix[:-1]
+#         if not prefix:
+#             break
 
-print(prefix)
+# print(prefix)
 
 
 #! 📦 ARRAYS
@@ -194,28 +194,28 @@ print(prefix)
 # Example:
 # [2,7,11,15], target = 9 → [0,1]
 
-arr = [2, 7, 11, 15]
-target = 9
+# arr = [2, 7, 11, 15]
+# target = 9
 
-for i in range(len(arr)):
-    for j in range(i + 1, len(arr)):
-        if arr[i] + arr[j] == target:
-            print(i, j)
+# for i in range(len(arr)):
+#     for j in range(i + 1, len(arr)):
+#         if arr[i] + arr[j] == target:
+#             print(i, j)
 
 
-arr = [2, 7, 11, 15]
-target = 9
+# arr = [2, 7, 11, 15]
+# target = 9
 
-seen = {}
+# seen = {}
 
-for i, num in enumerate(arr):
-    need = target - num
+# for i, num in enumerate(arr):
+#     need = target - num
 
-    if need in seen:
-        print(seen[need], i)
-        break
+#     if need in seen:
+#         print(seen[need], i)
+#         break
 
-    seen[num] = i
+#     seen[num] = i
 
 
 #! 7. Contains Duplicate
@@ -225,35 +225,35 @@ for i, num in enumerate(arr):
 # Example:
 # [1,2,3,1] → True
 
-lst = [1, 2, 3, 1]
+# lst = [1, 2, 3, 1]
 
-count = {}
-for i in lst:
-    if i in count:
-        count[i] += 1
-    else:
-        count[i] = 1
+# count = {}
+# for i in lst:
+#     if i in count:
+#         count[i] += 1
+#     else:
+#         count[i] = 1
 
-for val in count:
-    if count[val] >= 2:
-        print(True)
-        break
-else:
-    print(False)
+# for val in count:
+#     if count[val] >= 2:
+#         print(True)
+#         break
+# else:
+#     print(False)
 
 
-lst = [1, 2, 3, 1]
-print(len(lst) != len(set(lst)))
+# lst = [1, 2, 3, 1]
+# print(len(lst) != len(set(lst)))
 
-lst = [1, 2, 3, 1]
-seen = set()
-for i in lst:
-    if i in seen:
-        print(True)
-        break
-    seen.add(i)
-else:
-    print(False)
+# lst = [1, 2, 3, 1]
+# seen = set()
+# for i in lst:
+#     if i in seen:
+#         print(True)
+#         break
+#     seen.add(i)
+# else:
+#     print(False)
 
 
 #! 8. Move Zeroes
@@ -263,27 +263,27 @@ else:
 # Example:
 # [0,1,0,3,12] → [1,3,12,0,0]
 
-lst = [0,1,0,3,12]
-pos = 0
-for i in range(len(lst)):
-    if lst[i]!=0:
-        lst[pos]=lst[i]
-        pos+=1
-for i in range(pos, len(lst)):
-    lst[i] = 0
-print(lst)
+# lst = [0,1,0,3,12]
+# pos = 0
+# for i in range(len(lst)):
+#     if lst[i]!=0:
+#         lst[pos]=lst[i]
+#         pos+=1
+# for i in range(pos, len(lst)):
+#     lst[i] = 0
+# print(lst)
 
 
-arr = [0, 1, 0, 3, 12]
-result = []
-for x in arr:
-    if x != 0:
-        result.append(x)
-zeros = len(arr) - len(result)
-# result.extend([0] * zeros)
-for z in range(zeros):
-    result.append(0)
-print(result)
+# arr = [0, 1, 0, 3, 12]
+# result = []
+# for x in arr:
+#     if x != 0:
+#         result.append(x)
+# zeros = len(arr) - len(result)
+# # result.extend([0] * zeros)
+# for z in range(zeros):
+#     result.append(0)
+# print(result)
 
 
 #! 9. Best Time to Buy and Sell Stock
@@ -291,21 +291,21 @@ print(result)
 # Example:
 # [7,1,5,3,6,4] → 5
 
-lst =  [7,1,5,3,6,4] 
+# lst =  [7,1,5,3,6,4] 
 
-if len(lst)<=1:
-    print(0)
-else:
-    min_price = lst[0]
-    max_price = 0
-    for price in lst:
-        if price<min_price:
-            min_price=price
+# if len(lst)<=1:
+#     print(0)
+# else:
+#     min_price = lst[0]
+#     max_price = 0
+#     for price in lst:
+#         if price<min_price:
+#             min_price=price
 
-        profit = price-min_price
-        if profit>max_price:
-            max_price= profit
-    print(max_price)
+#         profit = price-min_price
+#         if profit>max_price:
+#             max_price= profit
+#     print(max_price)
     
 
 #! 10. Merge Sorted Array
@@ -314,38 +314,38 @@ else:
 # Example:
 # [1,2,3,0,0,0] + [2,5,6] → [1,2,2,3,5,6]
 
-a = [1, 2, 3, 0, 0, 0]
-b = [2, 5, 6]
-m = 3
-n = 3
+# a = [1, 2, 3, 0, 0, 0]
+# b = [2, 5, 6]
+# m = 3
+# n = 3
 
-i = m - 1
-j = n - 1
-k = m + n - 1
+# i = m - 1
+# j = n - 1
+# k = m + n - 1
 
-while i >= 0 and j >= 0:
-    if a[i] > b[j]:
-        a[k] = a[i]
-        i -= 1
-    else:
-        a[k] = b[j]
-        j -= 1
-    k -= 1
+# while i >= 0 and j >= 0:
+#     if a[i] > b[j]:
+#         a[k] = a[i]
+#         i -= 1
+#     else:
+#         a[k] = b[j]
+#         j -= 1
+#     k -= 1
 
-while j >= 0:
-    a[k] = b[j]
-    j -= 1
-    k -= 1
+# while j >= 0:
+#     a[k] = b[j]
+#     j -= 1
+#     k -= 1
 
-print(a)
+# print(a)
 
 
-a = [1,2,3,0,0,0]
-b = [2,5,6]
-m =3
-a[m:] = b
-a.sort()
-print(a)
+# a = [1,2,3,0,0,0]
+# b = [2,5,6]
+# m =3
+# a[m:] = b
+# a.sort()
+# print(a)
 
 
 #! 11. Majority Element
@@ -356,55 +356,55 @@ print(a)
 # [3,2,3] → 3
 
 
-lst = [3,2,3]
-ele = len(lst)//2
+# lst = [3,2,3]
+# ele = len(lst)//2
 
-count = {}
-for i in lst:
-        count[i] = count.get(i, 0) + 1
+# count = {}
+# for i in lst:
+#         count[i] = count.get(i, 0) + 1
 
-for val in count:
-    if count[val]>ele:
-        print(val)
+# for val in count:
+#     if count[val]>ele:
+#         print(val)
 
-#!Boyer Moore 
-lst = [3, 2, 3]
-candidate = None
-count = 0
+# #!Boyer Moore 
+# lst = [3, 2, 3]
+# candidate = None
+# count = 0
 
-for num in lst:
-    if count == 0:
-        candidate = num
-    count += 1 if num == candidate else -1
+# for num in lst:
+#     if count == 0:
+#         candidate = num
+#     count += 1 if num == candidate else -1
 
-print(candidate)
+# print(candidate)
 
 #! 12. Intersection of Two Arrays
 # Return the intersection of two arrays (unique elements).
 # Example:
 # [1,2,2,1], [2,2] → [2]
 
-lst1 = [1,2,2,1]
-lst2 = [2,2]
+# lst1 = [1,2,2,1]
+# lst2 = [2,2]
 
-common_element = set()
-for i in lst1:
-    if i in lst2:
-        common_element.add(i)
+# common_element = set()
+# for i in lst1:
+#     if i in lst2:
+#         common_element.add(i)
 
-print(common_element)
+# print(common_element)
 
 
-lst1 = [1,2,2,1]
-lst2 = [2,2]
-set2 = set(lst2)
-common_element = set()
+# lst1 = [1,2,2,1]
+# lst2 = [2,2]
+# set2 = set(lst2)
+# common_element = set()
 
-for i in lst1:
-    if i in set2:
-        common_element.add(i)
+# for i in lst1:
+#     if i in set2:
+#         common_element.add(i)
 
-print(common_element)
+# print(common_element)
 
 
 #? 13. Top K Frequent Elements
@@ -412,17 +412,17 @@ print(common_element)
 # Example:
 # [1,1,1,2,2,3], k=2 → [1,2]
 
-nums = [1, 1, 1, 2, 2, 3]
-k = 2
+# nums = [1, 1, 1, 2, 2, 3]
+# k = 2
 
-dct = {}
-for i in nums:
-    dct[i] = dct.get(i, 0) + 1
+# dct = {}
+# for i in nums:
+#     dct[i] = dct.get(i, 0) + 1
 
-sorted_items = sorted(dct.items(), key=lambda x: x[1], reverse=True)
+# sorted_items = sorted(dct.items(), key=lambda x: x[1], reverse=True)
 
-result = [key for key in sorted_items[:k]]
-print(result)
+# result = [key for key in sorted_items[:k]]
+# print(result)
 
 
 
@@ -434,24 +434,24 @@ print(result)
 # Example:
 # "()[]{}" → True
 
-def isValid(s):
-    stack = []
-    closeToOpen = {')':'(', ']':'[', '}':'{'}
+# def isValid(s):
+#     stack = []
+#     closeToOpen = {')':'(', ']':'[', '}':'{'}
 
-    for c in s:
-        if c in closeToOpen:
-            if not stack or stack[-1] != closeToOpen[c]:
-                return False
-            stack.pop()
-        else:
-            stack.append(c)
-    return not stack
+#     for c in s:
+#         if c in closeToOpen:
+#             if not stack or stack[-1] != closeToOpen[c]:
+#                 return False
+#             stack.pop()
+#         else:
+#             stack.append(c)
+#     return not stack
 
 
-print(isValid("()[]{}"))  
-print(isValid("([)]"))       
-print(isValid("{[]}"))      
-print(isValid("((("))        
+# print(isValid("()[]{}"))  
+# print(isValid("([)]"))       
+# print(isValid("{[]}"))      
+# print(isValid("((("))        
 
 
 
@@ -460,63 +460,61 @@ print(isValid("((("))
 # Design a stack that supports retrieving the minimum element in O(1).
 
 #* “We push (value, min_so_far) because when elements are popped, the minimum might be removed. Storing the minimum at each step ensures getMin() stays O(1) without recalculation.”
-class MinStack:
-    def __init__(self):
-        self.stack = []
+# class MinStack:
+#     def __init__(self):
+#         self.stack = []
 
-    def push(self, val):
-        if not self.stack:
-            self.stack.append((val, val))
-        else:
-            current_min = min(val, self.stack[-1][1])
-            self.stack.append((val, current_min))
+#     def push(self, val):
+#         if not self.stack:
+#             self.stack.append((val, val))
+#         else:
+#             current_min = min(val, self.stack[-1][1])
+#             self.stack.append((val, current_min))
 
-    def pop(self):
-        self.stack.pop()
+#     def pop(self):
+#         self.stack.pop()
 
-    def top(self):
-        return self.stack[-1][0]
+#     def top(self):
+#         return self.stack[-1][0]
 
-    def getMin(self):
-        return self.stack[-1][1]
+#     def getMin(self):
+#         return self.stack[-1][1]
 
 
-s = MinStack()
-s.push(5)
-s.push(3)
-s.push(7)
+# s = MinStack()
+# s.push(5)
+# s.push(3)
+# s.push(7)
 
-print(s.top())     # 7
-print(s.getMin())  # 3
+# print(s.top())     # 7
+# print(s.getMin())  # 3
 
-s.pop()
-print(s.getMin())  # 3
+# s.pop()
+# print(s.getMin())  # 3
 
-s.pop()
+# s.pop()
 
-print(s.getMin())  # 5
+# print(s.getMin())  # 5
 
 #! 16. Factorial (Recursion)
 # Compute factorial using recursion.
 
 #Normal Factorial
-n = int(input("Enter A Value : "))
-fact = 1
-for i in range(1, n+1):
-    fact = fact * i
-print(fact)
+# n = int(input("Enter A Value : "))
+# fact = 1
+# for i in range(1, n+1):
+#     fact = fact * i
+# print(fact)
 
 
 # Factorial using Recursion (Python)
-def fact(n):
-    if n == 0:
-        return 1
-    return n * fact(n-1)
+# def fact(n):
+#     if n == 0:
+#         return 1
+#     return n * fact(n-1)
 
-n = int(input())
-print(fact(n))
-
-
+# n = int(input())
+# print(fact(n))
 
 
 
@@ -525,11 +523,12 @@ print(fact(n))
 
 # Return the nth Fibonacci number.
 
-n = int(input())
+n = int(input("Enter Value : "))
 a = 0
 b = 1
 
-for i in range(n):
-    a, b = b, a + b
+for i in range(n): 
+    a = b         
+    b = a+b        
 
 print(a)
