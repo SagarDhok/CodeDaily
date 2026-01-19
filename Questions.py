@@ -535,16 +535,16 @@
 # print(a)
 
 #! 📐 TWO POINTERS
-# 21. Remove Duplicates from Sorted Array
+# 18. Remove Duplicates from Sorted Array
 
 nums = [0,0,1,1,1,2,2,3,3,4]
 
 if len(nums) == 0:
     print(0)
 
-i = 0  # slow pointer
+i = 0  
 
-for j in range(1, len(nums)):  # fast pointer
+for j in range(1, len(nums)):  
     if nums[j] != nums[i]:
         i += 1
         nums[i] = nums[j]
