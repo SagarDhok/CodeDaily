@@ -523,12 +523,32 @@
 
 # Return the nth Fibonacci number.
 
-n = int(input("Enter Value : "))
-a = 0
-b = 1
+# n = int(input("Enter Value : "))
+# a = 0
+# b = 1
 
-for i in range(n): 
-    a = b         
-    b = a+b        
+# for i in range(n): 
+#     temp = a+b
+#     a = b         
+#     b = temp 
 
-print(a)
+# print(a)
+
+#! 📐 TWO POINTERS
+# 21. Remove Duplicates from Sorted Array
+
+nums = [0,0,1,1,1,2,2,3,3,4]
+
+if len(nums) == 0:
+    print(0)
+
+i = 0  # slow pointer
+
+for j in range(1, len(nums)):  # fast pointer
+    if nums[j] != nums[i]:
+        i += 1
+        nums[i] = nums[j]
+
+print(i + 1)
+print(nums[:i+1])
+
