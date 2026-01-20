@@ -2,13 +2,13 @@
 #! 1. Reverse String
 # Given a list of characters s, reverse it in-place.
 # Example:
-# ["h","e","l","l","o"] → ["o","l","l","e","h"]
+# ["h","e","left","left","o"] → ["o","left","left","e","h"]
 
-# s = ["h","e","l","l","o"]
+# s = ["h","e","left","left","o"]
 # reversed_s = s[::-1]
 # print(reversed_s)
 
-# s= ["h","e","l","l","o"]
+# s= ["h","e","left","left","o"]
 # left = 0
 # right= len(s)-1
 # while left<right:
@@ -549,6 +549,55 @@ for j in range(1, len(nums)):
         i += 1
         nums[i] = nums[j]
 
-print(i + 1)
+print(nums[:i+1])
 print(nums[:i+1])
 
+
+
+#! 19. Squares of a Sorted Array
+# Return a sorted array of squares.
+
+lst = [-4,-1,0,3,10]
+for i in range(len(lst)):
+     lst[i] = lst[i]*lst[i]
+
+lst.sort()
+print(lst)
+
+
+nums = [-4, -1, 0, 3, 10]
+
+n = len(nums)
+ans = [0] * n
+
+i = 0
+j = n - 1
+k = n - 1
+
+while i <= j:
+    if abs(nums[i]) > abs(nums[j]):
+        ans[k] = nums[i] * nums[i]
+        i += 1
+    else:
+        ans[k] = nums[j] * nums[j]
+        j -= 1
+    k -= 1
+
+print(ans)
+
+
+
+def sortedSquares(nums):
+    left, right = 0, len(nums) - 1
+    res = []
+
+    while left <= right:
+        if nums[left] * nums[left] > nums[right] * nums[right]:
+            res.append(nums[left] * nums[left])
+            left += 1
+        else:
+            res.append(nums[right] * nums[right])
+            right -= 1
+
+    return res[::-1]
+print(sortedSquares( [-4, -1, 0, 3, 10]))
