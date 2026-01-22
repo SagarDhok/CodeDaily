@@ -601,3 +601,30 @@ def sortedSquares(nums):
 
     return res[::-1]
 print(sortedSquares( [-4, -1, 0, 3, 10]))
+
+
+
+#! 20. Subarray Sum Equals K
+# Count subarrays whose sum equals k.
+
+def subarraySum(nums, k):
+    count = 0
+    n = len(nums)
+
+    for i in range(n):
+        s = 0
+        for j in range(i, n):
+            s += nums[j]
+            if s == k:
+                count += 1
+
+    return count
+
+nums = [3, 4, 7, 2, -3, 1, 4, 2]
+k = 7
+print(subarraySum(nums, k))  
+
+nums = [1, 1, 1]
+k = 2
+print(subarraySum(nums, k)) 
+
