@@ -628,3 +628,26 @@ nums = [1, 1, 1]
 k = 2
 print(subarraySum(nums, k)) 
 
+#! 21. Group Anagrams
+
+# Group strings that are anagrams.
+
+from collections import defaultdict
+
+class Solution:
+    def groupAnagrams(self, strs):
+        groups = defaultdict(list)
+
+        for s in strs:
+            key = ''.join(sorted(s))
+            groups[key].append(s)
+
+        return list(groups.values())
+
+s = Solution()
+print(s.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+
+
+from collections import defaultdict
+groups = defaultdict(list)
+print(groups)
