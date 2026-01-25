@@ -651,3 +651,30 @@ print(s.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
 from collections import defaultdict
 groups = defaultdict(list)
 print(groups)
+
+
+
+
+
+# Q22. Product of Array Except Self
+# Return array where each element is product of all others (no division).
+
+
+# nums = [1,2,3,4]
+#Output:[24,12,8,6]
+
+nums = [1,2,3,4]
+ans = [1] * len(nums)
+
+prefix = 1
+for i in range(len(nums)):
+    ans[i] = prefix
+    prefix *= nums[i]
+
+# [1, 1, 2, 6]
+suffix = 1
+for i in range(len(nums) - 1, -1, -1):
+    ans[i] *= suffix
+    suffix *= nums[i]
+
+print(ans)
