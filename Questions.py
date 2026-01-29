@@ -690,3 +690,46 @@ for i in range(len(nums)):
         ans.append(prod)
 print(ans)
 
+
+
+#!Q23) Problem: Find the Missing Number
+# Problem Statement
+# You are given an array nums containing n distinct numbers taken from the range [0, n].
+# That means:
+# The array has n elements
+# Numbers are from 0 to n
+# Exactly one number is missing
+# Your task is to return the missing number.
+# Example 1
+# Input: nums = [3, 0, 1]
+# Output: 2
+
+# Example 2
+# Input: nums = [0, 1]
+# Output: 2
+
+# Example 3
+# Input: nums = [9,6,4,2,3,5,7,0,1]
+# Output: 8
+
+# Constraints
+# 1 <= n <= 10^4
+# All numbers in nums are unique
+# nums contains numbers from [0, n] with one missing
+
+nums = [9,6,4,2,3,5,7,0,1]
+
+for i in range(len(nums)+1):
+    if i not in nums:
+        print(i)
+
+
+nums = [9,6,4,2,3,5,7,0,1]
+
+n = len(nums)
+expected_sum = n * (n + 1) // 2  #formula to calculate sum of natural numbers 
+
+print(expected_sum)
+actual_sum = sum(nums)
+
+print(expected_sum - actual_sum)
