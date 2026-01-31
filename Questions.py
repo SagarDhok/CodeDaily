@@ -733,3 +733,75 @@ print(expected_sum)
 actual_sum = sum(nums)
 
 print(expected_sum - actual_sum)
+
+#!Q24) Find the Largest Element in an Array
+
+# Problem Statement (clean + realistic):
+
+# Given an integer array nums, return the largest element in the array.
+
+# Example
+# Input: nums = [3, 7, 2, 9, 4]
+# Output: 9
+
+# Constraints
+
+# 1 <= len(nums) <= 10^4
+
+# Array contains at least one element
+
+# Integers can be negative
+
+# Why this question matters (don’t underestimate it)
+
+# Interviewers use this to check:
+
+# Can you reason without overengineering?
+
+# Do you handle negatives correctly?
+
+# Do you explain time & space cleanly?
+
+# Do you avoid unnecessary data structures?
+
+# People fail this by:
+
+# Sorting the array (wasteful)
+
+# Using extra space for no reason
+
+# Not explaining edge cases
+
+# What you must submit
+
+# Same strict format:
+
+# 1. Python code
+
+# (No max() built-in — pretend interviewer banned it)
+
+# 2. Explanation
+
+# Answer:
+
+# How you initialize
+
+# How you update
+
+# Why this always works
+
+# 3. Time & Space Complexity
+
+
+#! nums = [3, 7, 2, 9, 4]
+# Output: 9
+
+
+nums = [3, 7, 2, 9, 4]
+
+max_val = nums[0]
+for num in nums:
+    if num > max_val:
+        max_val = num
+
+print(max_val)
