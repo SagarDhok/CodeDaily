@@ -807,3 +807,52 @@ for num in nums:
         max_val = num
 
 print(max_val)
+
+
+
+
+#! Q25) Second Largest Element in an Array
+
+# Problem Statement:
+
+# Given an integer array nums, find the second largest distinct element.
+
+# If the second largest element does not exist, return -1.
+
+# Examples
+# Input: [3, 7, 2, 9, 4]
+# Output: 7
+
+# Input: [10, 10, 10]
+# Output: -1
+
+# Input: [-5, -2, -9, -1]
+# Output: -2
+
+# Constraints
+
+# 1 <= len(nums) <= 10^4
+
+# Integers can be negative
+
+# Elements may repeat
+
+
+lst = [3, 7, 2, 9, 4]
+lst.sort()
+print("Second Max :",list(set(lst))[-2])
+
+
+lst = [3, 7, 2, 9, 4]
+
+mv = float('-inf')
+sv = float('-inf')
+
+for i in lst:
+    if i > mv:
+        sv = mv
+        mv = i
+    elif i != mv and i > sv:
+        sv = i
+
+print(sv if sv != float('-inf') else -1)
