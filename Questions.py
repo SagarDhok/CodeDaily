@@ -838,6 +838,7 @@ print(max_val)
 # Elements may repeat
 
 
+
 lst = [3, 7, 2, 9, 4]
 lst.sort()
 print("Second Max :",list(set(lst))[-2])
@@ -856,3 +857,44 @@ for i in lst:
         sv = i
 
 print(sv if sv != float('-inf') else -1)
+
+
+
+
+#!Q26) You’re given a list of integers nums.
+# Task:
+# Write a function that returns the first non-repeating integer in the list.
+# If all numbers repeat, return -1.
+# Preserve the original order of the list.
+# Time complexity should be better than O(n²).
+# Example
+# nums = [4, 5, 1, 2, 0, 4]
+# output = 5
+# nums = [1, 1, 2, 2]
+# output = -1
+# nums = [1, 1, 2, 2,3]
+# output = 3
+# Constraints
+# Input list length: 0 ≤ n ≤ 10^5
+# Integers can be negative
+# You may assume the input is a Python list
+# Requirements
+# Write clean, readable Python code
+# No external libraries except Python standard library
+# Function signature:
+# def first_non_repeating(nums):
+#     pass
+
+def first_non_repeating(nums):
+   count ={}
+   for i in nums:
+      count[i] = count.get(i,0)+1
+   for key in nums:
+       if count[key]==1:
+           return key
+   return -1
+           
+res = first_non_repeating([4, 5, 1, 2, 0, 4])
+print(f"First Non Repeating Numbers are : {res}")
+res = first_non_repeating([1, 1, 2, 2])
+print(f"First Non Repeating Numbers are : {res}")
