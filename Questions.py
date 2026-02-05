@@ -898,3 +898,53 @@ res = first_non_repeating([4, 5, 1, 2, 0, 4])
 print(f"First Non Repeating Numbers are : {res}")
 res = first_non_repeating([1, 1, 2, 2])
 print(f"First Non Repeating Numbers are : {res}")
+
+
+#!Q27) You’re given a string s.
+# Task
+# Write a function that returns the first non-repeating character in the string.
+# The comparison should be case-sensitive
+# Preserve the original order
+# If no such character exists, return None
+# Examples
+# s = "swiss"
+# output = "w"
+
+# s = "aabbcc"
+# output = None
+
+# s = "Python"
+# output = "P"
+
+# Constraints
+# 0 ≤ len(s) ≤ 10^5
+# String contains only ASCII characters
+# Function signature
+# def first_non_repeating_char(s):
+#     pass
+# Rules
+# No nested loops that make it O(n²)
+# Use only Python standard features
+# Write clean, readable code
+
+
+def first_non_repeating_char(s):
+
+
+    freq = {}
+    for c in s:
+        freq[c]=freq.get(c,0)+1
+
+    for c in s:
+        if freq[c]==1:
+            return i
+
+    return None
+
+s = "swiss"       
+res = first_non_repeating_char(s)
+print("first non-repeating character in the string : ",res)
+
+print(first_non_repeating_char("Python"))
+
+print(first_non_repeating_char("aabbcc"))
