@@ -948,3 +948,45 @@ print("first non-repeating character in the string : ",res)
 print(first_non_repeating_char("Python"))
 
 print(first_non_repeating_char("aabbcc"))
+
+
+
+
+
+#! Q28) You are given a list of integers.
+
+# Task
+
+# Write a function that returns all elements that appear more than once,
+# without duplicates, and preserve the order of their first repetition.
+
+# If no element repeats, return an empty list.
+
+# Examples
+# [1, 2, 3, 2, 4, 1, 5]  → [2, 1]
+# [1, 2, 3, 4]          → []
+# [5, 5, 5, 5]          → [5]
+
+# Function signature
+# def find_duplicates(nums):
+#     pass
+
+# Rules
+# Do not sort the list
+# Do not use count() inside a loop
+# Time complexity should be O(n)
+# Use only Python standard features
+
+def find_duplicates(nums):
+   seen = set()
+   added = set()
+   res = []
+   for val in nums:
+       if val in seen and val not in added:
+           res.append(val)
+           added.add(val)
+       else:
+           seen.add(val)
+   return res
+ 
+print(find_duplicates([1, 2, 3, 2, 4, 1, 5]))
