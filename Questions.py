@@ -990,3 +990,47 @@ def find_duplicates(nums):
    return res
  
 print(find_duplicates([1, 2, 3, 2, 4, 1, 5]))
+
+
+
+#! Q29) You are given a list of integers nums.
+# Task
+# Write a function that returns the count of each number, but only for numbers that appear more than once,
+# and preserve the order of their first appearance.
+# Return the result as a list of tuples: (number, count).
+# If no number repeats, return an empty list.
+# Examples
+# nums = [1, 2, 3, 2, 4, 1, 5]
+# output = [(1, 2), (2, 2)]
+# nums = [5, 5, 5, 3, 3]
+# output = [(5, 3), (3, 2)]
+# nums = [1, 2, 3]
+# output = []
+# Function signature
+# def count_duplicates(nums):
+#     pass
+# Rules
+# Do NOT sort the list
+# Do NOT use count() inside a loop
+# Preserve order of first appearance
+# Be ready to explain time & space complexity
+
+
+def count_duplicates(nums):
+    count = {}
+    for val in nums:
+        count[val] = count.get(val, 0) + 1
+
+    res = []
+    added = set()
+
+    for val in nums:
+        if count[val] > 1 and val not in added:
+            res.append((val, count[val]))
+            added.add(val)
+
+    return res
+
+
+print(count_duplicates([1, 2, 3, 2, 4, 1, 5]))
+print(count_duplicates( [5, 5, 5, 3, 3]))
