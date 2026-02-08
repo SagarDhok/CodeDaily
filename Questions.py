@@ -1037,3 +1037,57 @@ print(count_duplicates( [5, 5, 5, 3, 3]))
 
 
 
+#!Q30) You are given a list of integers nums.
+# Task
+# Write a function that returns a new list where:
+# All even numbers come first
+# All odd numbers come after
+# The relative order of even numbers and odd numbers must be preserved
+# This is called a stable partition.
+# Examples
+# nums = [1, 2, 3, 4, 5, 6]
+# output = [2, 4, 6, 1, 3, 5]
+
+# nums = [2, 4, 6]
+# output = [2, 4, 6]
+
+# nums = [1, 3, 5]
+# output = [1, 3, 5]
+
+# nums = []
+# output = []
+
+# Function signature
+# def stable_even_odd(nums):
+#     pass
+
+# Rules
+
+# Do not sort
+
+# Do not change relative order
+
+# Be ready to explain time & space complexity
+
+# Clean, readable Python
+
+# def stable_even_odd(nums):
+#     pass
+
+def stable_even_odd(nums):
+    evens = []
+    odds = []
+
+    for val in nums:
+        if val % 2 == 0:
+            evens.append(val)
+        else:
+            odds.append(val)
+
+    return evens + odds
+
+
+print(stable_even_odd([1, 2, 3, 4, 5, 6]))
+print(stable_even_odd([1, 3,5]))
+print(stable_even_odd([2,4,6]))
+print(stable_even_odd([]))
