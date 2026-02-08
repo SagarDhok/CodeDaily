@@ -1034,3 +1034,6 @@ def count_duplicates(nums):
 
 print(count_duplicates([1, 2, 3, 2, 4, 1, 5]))
 print(count_duplicates( [5, 5, 5, 3, 3]))
+
+
+
