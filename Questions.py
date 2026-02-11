@@ -1093,7 +1093,7 @@
 # print(stable_even_odd([]))
 
 
-#! You are given a string s
+#!Q31) You are given a string s
 # Task
 # Write a function that checks whether the string is a palindrome,
 # ignoring case and spaces.
@@ -1118,18 +1118,65 @@
 # Clean, readable logic
 
 
-def is_palindrome(s):
-    s = s.replace(" ", "").lower()
-    left = 0
-    right = len(s)-1
-    while left < right:
-        if s[left]!=s[right]:
-           return False
-        left +=1
-        right-=1
-    return True
+# def is_palindrome(s):
+#     s = s.replace(" ", "").lower()
+#     left = 0
+#     right = len(s)-1
+#     while left < right:
+#         if s[left]!=s[right]:
+#            return False
+#         left +=1
+#         right-=1
+#     return True
 
-print(is_palindrome("Never odd or even"))
-print(is_palindrome("madam"))
-print(is_palindrome("Hello"))
-print(is_palindrome(""))
+# print(is_palindrome("Never odd or even"))
+# print(is_palindrome("madam"))
+# print(is_palindrome("Hello"))
+# print(is_palindrome(""))
+
+
+
+
+
+#!Q32) Topic: List + Two Pointers (Very common)
+# You are given a sorted list of integers nums and an integer target.
+# Task
+# Write a function that returns the indices (0-based) of two numbers whose sum equals target.
+# Constraints:
+# Exactly one valid pair exists
+# You must use the two-pointer approach
+# Time complexity should be O(n)
+# Do NOT use extra data structures (no dict/set)
+# Examples
+# nums = [1, 2, 3, 4, 6]
+# target = 6
+# output = (1, 3)   # nums[1] + nums[3] = 2 + 4 = 6
+# nums = [2, 7, 11, 15]
+# target = 9
+# output = (0, 1)
+# Function signature
+# def two_sum_sorted(nums, target):
+#     pass
+# Rules
+# Use two pointers
+# No nested loops
+# Be ready to explain time & space complexity
+
+def two_sum_sorted(nums, target):
+    left = 0
+    right = len(nums) - 1
+
+    while left < right:
+        current_sum = nums[left] + nums[right]
+
+        if current_sum == target:
+            return (left, right)
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+
+print(two_sum_sorted( [1, 2, 3, 4, 6],6))
+
+
+
