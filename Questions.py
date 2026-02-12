@@ -1162,23 +1162,21 @@
 # No nested loops
 # Be ready to explain time & space complexity
 
-def two_sum_sorted(nums, target):
-    left = 0
-    right = len(nums) - 1
+# def two_sum_sorted(nums, target):
+#     left = 0
+#     right = len(nums) - 1
 
-    while left < right:
-        current_sum = nums[left] + nums[right]
+#     while left < right:
+#         current_sum = nums[left] + nums[right]
 
-        if current_sum == target:
-            return (left, right)
-        elif current_sum < target:
-            left += 1
-        else:
-            right -= 1
+#         if current_sum == target:
+#             return (left, right)
+#         elif current_sum < target:
+#             left += 1
+#         else:
+#             right -= 1
 
-print(two_sum_sorted( [1, 2, 3, 4, 6],6))
-
-
+# print(two_sum_sorted( [1, 2, 3, 4, 6],6))
 
 
 
