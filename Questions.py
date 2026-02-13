@@ -1180,3 +1180,36 @@
 
 
 
+
+#!Q34) Topic: List + Basic Validation Logic (Backend-style)
+# You are given a list of integers nums.
+# Task
+# Return True if the list contains any duplicate element, otherwise return False.
+# Examples
+# [1, 2, 3, 4]        → False
+# [1, 2, 3, 2]        → True
+# [5, 5, 5, 5]        → True
+# []                  → False
+# Function signature
+# def contains_duplicate(nums):
+#     pass
+# Rules
+# Time complexity target: O(n)
+# Space complexity: explain clearly
+# Do NOT use count() inside a loop
+# Clean, readable logic
+
+def contains_duplicate(nums):
+    freq = {}
+
+    for val in nums:
+        if val in freq:
+            return True
+        freq[val] = 1
+
+    return False
+
+print(contains_duplicate([1, 2, 3, 4]  ))
+print(contains_duplicate( [1, 2, 3, 2]))
+print(contains_duplicate([5, 5, 5, 5]  ))
+print(contains_duplicate([]  ))
