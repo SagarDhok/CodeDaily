@@ -1199,17 +1199,67 @@
 # Do NOT use count() inside a loop
 # Clean, readable logic
 
-def contains_duplicate(nums):
-    freq = {}
+# def contains_duplicate(nums):
+#     freq = {}
 
-    for val in nums:
-        if val in freq:
-            return True
-        freq[val] = 1
+#     for val in nums:
+#         if val in freq:
+#             return True
+#         freq[val] = 1
 
-    return False
+#     return False
 
-print(contains_duplicate([1, 2, 3, 4]  ))
-print(contains_duplicate( [1, 2, 3, 2]))
-print(contains_duplicate([5, 5, 5, 5]  ))
-print(contains_duplicate([]  ))
+# print(contains_duplicate([1, 2, 3, 4]  ))
+# print(contains_duplicate( [1, 2, 3, 2]))
+# print(contains_duplicate([5, 5, 5, 5]  ))
+# print(contains_duplicate([]  ))
+
+
+#!Q35) You are given an unsorted list of integers nums.
+# Task
+# Return the length of the longest consecutive sequence.
+# Sequence elements must be consecutive numbers (x, x+1, x+2…)
+# Order in the list does NOT matter
+# Time complexity target: O(n)
+# Examples
+# [100, 4, 200, 1, 3, 2]
+# → 4
+# # Because the longest consecutive sequence is [1,2,3,4]
+# [0, -1, 1, 2, -2, 3]
+# → 6
+# # Sequence: [-2,-1,0,1,2,3]
+# []
+# → 0
+# Function signature
+# def longest_consecutive(nums):
+#     pass
+# Rules
+# Do NOT sort the list (that would be O(n log n))
+# Target time complexity: O(n)
+# Explain space complexity clearly
+# Clean and readable logic
+
+
+def longest_consecutive(nums):
+    if not nums:
+        return 0
+
+    num_set = set(nums)
+    longest = 0
+
+    for num in num_set:
+        if num-1 not  in num_set:
+            current = num
+            length = 1
+
+            while current+1 in num_set:
+                current+=1
+                length+=1
+
+            longest = max(longest,length)
+
+    return longest                                        
+
+print(longest_consecutive( [0, -1, 1, 2, -2, 3]))
+print(longest_consecutive([100, 4, 200, 1, 3, 2]))
+print(longest_consecutive([]))
