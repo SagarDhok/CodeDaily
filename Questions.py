@@ -1240,26 +1240,84 @@
 # Clean and readable logic
 
 
-def longest_consecutive(nums):
-    if not nums:
-        return 0
+# def longest_consecutive(nums):
+#     if not nums:
+#         return 0
 
-    num_set = set(nums)
-    longest = 0
+#     num_set = set(nums)
+#     longest = 0
 
-    for num in num_set:
-        if num-1 not  in num_set:
-            current = num
-            length = 1
+#     for num in num_set:
+#         if num-1 not  in num_set:
+#             current = num
+#             length = 1
 
-            while current+1 in num_set:
-                current+=1
-                length+=1
+#             while current+1 in num_set:
+#                 current+=1
+#                 length+=1
 
-            longest = max(longest,length)
+#             longest = max(longest,length)
 
-    return longest                                        
+#     return longest                                        
 
-print(longest_consecutive( [0, -1, 1, 2, -2, 3]))
-print(longest_consecutive([100, 4, 200, 1, 3, 2]))
-print(longest_consecutive([]))
+# print(longest_consecutive( [0, -1, 1, 2, -2, 3]))
+# print(longest_consecutive([100, 4, 200, 1, 3, 2]))
+# print(longest_consecutive([]))
+
+
+
+#!36Q) Dictionary + Data Aggregation (Very Common in Backend)
+# You are given a list of dictionaries representing user transactions:
+# transactions = [
+#     {"user": "A", "amount": 100},
+#     {"user": "B", "amount": 200},
+#     {"user": "A", "amount": 300},
+#     {"user": "C", "amount": 50},
+#     {"user": "B", "amount": 100}
+# ]
+# 🧠 Task
+# Return a dictionary where:
+# Key = user
+# Value = total amount spent by that user
+# Expected Output
+# {
+#     "A": 400,
+#     "B": 300,
+#     "C": 50
+# }
+# Function signature
+# def aggregate_transactions(transactions):
+#     pass
+
+
+def aggregate_transactions(transactions):
+                res = {}
+                for t in transactions:
+                        user = t["user"]
+                        amount = t["amount"]
+
+                        if user in res:
+                                res[user] += amount
+                        else:
+                                res[user] = amount
+                return res
+
+transactions = [
+    {"user": "A", "amount": 100},{"user": "B", "amount": 200},{"user": "A", "amount": 300},{"user": "C", "amount": 50},{"user": "B", "amount": 100}
+]
+print(aggregate_transactions(transactions))
+
+
+
+def aggregate_transactions(transactions):
+    res = {}
+    for t in transactions:
+        user = t["user"]
+        amount = t["amount"]
+        res[user] = res.get(user, 0) + amount
+    return res
+transactions = [
+    {"user": "A", "amount": 100},{"user": "B", "amount": 200},{"user": "A", "amount": 300},{"user": "C", "amount": 50},{"user": "B", "amount": 100}
+]
+print(aggregate_transactions(transactions))
+
