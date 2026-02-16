@@ -1290,34 +1290,75 @@
 #     pass
 
 
-def aggregate_transactions(transactions):
-                res = {}
-                for t in transactions:
-                        user = t["user"]
-                        amount = t["amount"]
+# def aggregate_transactions(transactions):
+#                 res = {}
+#                 for t in transactions:
+#                         user = t["user"]
+#                         amount = t["amount"]
 
-                        if user in res:
-                                res[user] += amount
-                        else:
-                                res[user] = amount
-                return res
+#                         if user in res:
+#                                 res[user] += amount
+#                         else:
+#                                 res[user] = amount
+#                 return res
 
-transactions = [
-    {"user": "A", "amount": 100},{"user": "B", "amount": 200},{"user": "A", "amount": 300},{"user": "C", "amount": 50},{"user": "B", "amount": 100}
-]
-print(aggregate_transactions(transactions))
+# transactions = [
+#     {"user": "A", "amount": 100},{"user": "B", "amount": 200},{"user": "A", "amount": 300},{"user": "C", "amount": 50},{"user": "B", "amount": 100}
+# ]
+# print(aggregate_transactions(transactions))
 
 
 
-def aggregate_transactions(transactions):
-    res = {}
-    for t in transactions:
-        user = t["user"]
-        amount = t["amount"]
-        res[user] = res.get(user, 0) + amount
-    return res
-transactions = [
-    {"user": "A", "amount": 100},{"user": "B", "amount": 200},{"user": "A", "amount": 300},{"user": "C", "amount": 50},{"user": "B", "amount": 100}
-]
-print(aggregate_transactions(transactions))
+# def aggregate_transactions(transactions):
+#     res = {}
+#     for t in transactions:
+#         user = t["user"]
+#         amount = t["amount"]
+#         res[user] = res.get(user, 0) + amount
+#     return res
+# transactions = [
+#     {"user": "A", "amount": 100},{"user": "B", "amount": 200},{"user": "A", "amount": 300},{"user": "C", "amount": 50},{"user": "B", "amount": 100}
+# ]
+# print(aggregate_transactions(transactions))
 
+
+
+#! Q37) You are given a list of API request timestamps (in seconds), sorted in increasing order.\
+# Example:
+# requests = [1, 2, 3, 4, 10, 11, 12]
+# Task
+# Implement a function that returns True if more than 3 requests occur within any 5-second window, otherwise return False.
+# Example 1
+# requests = [1, 2, 3, 4]
+# From time 1 to 4 → 4 requests within 5 seconds
+# Return:
+# True
+# Example 2
+# requests = [1, 6, 11, 16]
+# No 5-second window contains more than 3 requests
+# Return:
+# False
+# Function signature
+# def is_rate_limited(requests):
+#     pass
+# Rules
+# Time complexity target: O(n)
+# Use efficient logic (no nested loops)
+# Clean readable solution
+# Explain space complexity
+
+
+def is_rate_limited(requests):
+    n = len(requests)
+
+    if n < 4:
+        return False
+
+    for i in range(n - 3):
+        if requests[i + 3] - requests[i] <= 5:
+            return True
+
+    return False
+
+print(is_rate_limited([1, 2, 3, 4]))
+print(is_rate_limited([1, 2, 3, 4]))
