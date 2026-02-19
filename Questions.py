@@ -1348,17 +1348,78 @@
 # Explain space complexity
 
 
-def is_rate_limited(requests):
-    n = len(requests)
+# def is_rate_limited(requests):
+#     n = len(requests)
 
-    if n < 4:
-        return False
+#     if n < 4:
+#         return False
 
-    for i in range(n - 3):
-        if requests[i + 3] - requests[i] <= 5:
-            return True
+#     for i in range(n - 3):
+#         if requests[i + 3] - requests[i] <= 5:
+#             return True
 
-    return False
+#     return False
 
-print(is_rate_limited([1, 2, 3, 4]))
-print(is_rate_limited([1, 2, 3, 4]))
+# print(is_rate_limited([1, 2, 3, 4]))
+# print(is_rate_limited([1, 2, 3, 4]))
+
+
+
+#! Q38) You are given a list of log strings.
+# Each log is in this format:
+# "IP_ADDRESS - TIMESTAMP"
+# Example:
+# logs = [
+#     "192.168.1.1 - 10",
+#     "192.168.1.2 - 15",
+#     "192.168.1.1 - 20",
+#     "192.168.1.3 - 25",
+#     "192.168.1.2 - 30"
+# ]
+# 🎯 Task
+# Write a function:
+# def most_active_ip(logs):
+#     ...
+# Return the IP address that appears the most times.
+# If multiple IPs have the same highest frequency, return the one that appears first in the logs.
+# Example
+# Input:
+# logs = [
+#     "192.168.1.1 - 10",
+#     "192.168.1.2 - 15",
+#     "192.168.1.1 - 20",
+#     "192.168.1.3 - 25",
+#     "192.168.1.2 - 30",
+#     "192.168.1.2 - 35"
+# ]
+# Output:
+# "192.168.1.2"
+# Constraints
+# 1 <= len(logs) <= 10^5
+# Each log is valid format
+# Target time complexity: O(n)
+# No sorting allowed
+# What I’ll Evaluate
+# String parsing cleanly
+# Dictionary usage
+# Tie-breaking logic
+# Time & space complexity
+# Clean code structure
+
+def most_active_ip(logs):
+            freq = {}
+            for log in logs:
+                    ip  =log.split("-")[0]
+                    freq[ip] = freq.get(ip,0)+1
+            max_val = max(freq.values())
+            return max_val
+                    
+logs = [
+    "192.168.1.1 - 10",
+    "192.168.1.2 - 15",
+    "192.168.1.1 - 20",
+    "192.168.1.3 - 25",
+    "192.168.1.2 - 30",
+    "192.168.1.2 - 35"
+]
+print(most_active_ip(logs))
