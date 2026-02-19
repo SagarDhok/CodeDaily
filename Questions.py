@@ -1408,11 +1408,16 @@
 
 def most_active_ip(logs):
             freq = {}
+            max_count = 0
+            res_ip = None
             for log in logs:
-                    ip  =log.split("-")[0]
+                    ip = log.split(" - ")[0]
                     freq[ip] = freq.get(ip,0)+1
-            max_val = max(freq.values())
-            return max_val
+                    if freq[ip]>max_count:
+                            max_count= freq[ip]
+                            res_ip = ip
+            return res_ip
+
                     
 logs = [
     "192.168.1.1 - 10",
