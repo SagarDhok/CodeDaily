@@ -1406,25 +1406,83 @@
 # Time & space complexity
 # Clean code structure
 
-def most_active_ip(logs):
-            freq = {}
-            max_count = 0
-            res_ip = None
-            for log in logs:
-                    ip = log.split(" - ")[0]
-                    freq[ip] = freq.get(ip,0)+1
-                    if freq[ip]>max_count:
-                            max_count= freq[ip]
-                            res_ip = ip
-            return res_ip
+# def most_active_ip(logs):
+#             freq = {}
+#             max_count = 0
+#             res_ip = None
+#             for log in logs:
+#                     ip = log.split(" - ")[0]
+#                     freq[ip] = freq.get(ip,0)+1
+#                     if freq[ip]>max_count:
+#                             max_count= freq[ip]
+#                             res_ip = ip
+#             return res_ip
 
                     
-logs = [
-    "192.168.1.1 - 10",
-    "192.168.1.2 - 15",
-    "192.168.1.1 - 20",
-    "192.168.1.3 - 25",
-    "192.168.1.2 - 30",
-    "192.168.1.2 - 35"
+# logs = [
+#     "192.168.1.1 - 10",
+#     "192.168.1.2 - 15",
+#     "192.168.1.1 - 20",
+#     "192.168.1.3 - 25",
+#     "192.168.1.2 - 30",
+#     "192.168.1.2 - 35"
+# ]
+# print(most_active_ip(logs))
+
+
+
+#!Q39) You are building a Django backend that receives user registration payloads.
+# Each payload is a dictionary like:
+# users = [
+#     {"username": "alice", "email": "a@gmail.com", "age": 22},
+#     {"username": "bob", "email": "b@gmail.com", "age": 17},
+#     {"username": "alice", "email": "c@gmail.com", "age": 25},
+#     {"username": "dave", "email": "d@gmail.com", "age": 30},
+#     {"username": "eve", "email": "e@gmail.com", "age": 16}
+# ]
+# 🎯 Task
+# Write a function:
+# def validate_users(users):
+# Return a list of valid usernames.
+# A user is valid if:
+# Age ≥ 18
+# Username is unique (no duplicates allowed)
+# Expected Output for Above Example
+# ["alice", "dave"]
+# Explanation:
+# "bob" → age < 18 ❌
+# "alice" appears twice → only first valid one counts
+# "eve" → age < 18 ❌
+# Rules
+# O(n) time
+# No sorting
+# Do not modify input list
+# Clean logic
+# No nested loops
+
+
+
+
+def validate_users(users):
+    seen = set()
+    result = []
+
+    for user in users:
+        username = user["username"]
+        age = user["age"]
+
+        if age >= 18 and username not in seen:
+            result.append(username)
+
+        seen.add(username)
+
+    return result
+
+users = [
+    {"username": "alice", "email": "a@gmail.com", "age": 22},
+    {"username": "bob", "email": "b@gmail.com", "age": 17},
+    {"username": "alice", "email": "c@gmail.com", "age": 25},
+    {"username": "dave", "email": "d@gmail.com", "age": 30},
+    {"username": "eve", "email": "e@gmail.com", "age": 16}
 ]
-print(most_active_ip(logs))
+print(validate_users(users))
