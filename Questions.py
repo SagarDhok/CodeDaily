@@ -1463,26 +1463,98 @@
 
 
 
-def validate_users(users):
-    seen = set()
-    result = []
+# def validate_users(users):
+#     seen = set()
+#     result = []
 
-    for user in users:
-        username = user["username"]
-        age = user["age"]
+#     for user in users:
+#         username = user["username"]
+#         age = user["age"]
 
-        if age >= 18 and username not in seen:
-            result.append(username)
+#         if age >= 18 and username not in seen:
+#             result.append(username)
 
-        seen.add(username)
+#         seen.add(username)
 
-    return result
+#     return result
 
-users = [
-    {"username": "alice", "email": "a@gmail.com", "age": 22},
-    {"username": "bob", "email": "b@gmail.com", "age": 17},
-    {"username": "alice", "email": "c@gmail.com", "age": 25},
-    {"username": "dave", "email": "d@gmail.com", "age": 30},
-    {"username": "eve", "email": "e@gmail.com", "age": 16}
+# users = [
+#     {"username": "alice", "email": "a@gmail.com", "age": 22},
+#     {"username": "bob", "email": "b@gmail.com", "age": 17},
+#     {"username": "alice", "email": "c@gmail.com", "age": 25},
+#     {"username": "dave", "email": "d@gmail.com", "age": 30},
+#     {"username": "eve", "email": "e@gmail.com", "age": 16}
+# ]
+# print(validate_users(users))
+
+
+
+#!Q40) You are building a reporting API.
+
+# You receive a list of orders:
+
+# orders = [
+#     {"order_id": 1, "user": "A", "amount": 100},
+#     {"order_id": 2, "user": "B", "amount": 200},
+#     {"order_id": 3, "user": "A", "amount": 50},
+#     {"order_id": 4, "user": "C", "amount": 300},
+#     {"order_id": 5, "user": "B", "amount": 100},
+# ]
+# 🎯 Task
+# Write a function:
+
+# def get_top_user(orders):
+
+# Return the user who has spent the highest total amount.
+
+# If multiple users have the same highest total, return the one whose total reached that value first.
+
+# Expected Output for Above Example
+# "C"
+
+# Because:
+
+# A → 150
+
+# B → 300
+
+# C → 300
+
+# B reached 300 at order 5.
+# C reached 300 at order 4.
+# So C wins (reached first).
+
+# Rules
+
+# O(n)
+
+# No sorting
+
+# No nested loops
+
+def get_top_user(orders):
+    totals = {}
+    max_total = 0
+    result_user = None
+
+    for order in orders:
+        user = order["user"]
+        amount = order["amount"]
+
+        totals[user] = totals.get(user, 0) + amount
+
+        if totals[user] > max_total:
+            max_total = totals[user]
+            result_user = user
+
+    return result_user
+                
+
+orders = [
+    {"order_id": 1, "user": "A", "amount": 100},
+    {"order_id": 2, "user": "B", "amount": 200},
+    {"order_id": 3, "user": "A", "amount": 50},
+    {"order_id": 4, "user": "C", "amount": 300},
+    {"order_id": 5, "user": "B", "amount": 100},
 ]
-print(validate_users(users))
+print(get_top_user(orders))
