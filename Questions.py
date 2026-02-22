@@ -1532,29 +1532,120 @@
 
 # No nested loops
 
-def get_top_user(orders):
-    totals = {}
-    max_total = 0
-    result_user = None
+# def get_top_user(orders):
+#     totals = {}
+#     max_total = 0
+#     result_user = None
 
-    for order in orders:
-        user = order["user"]
-        amount = order["amount"]
+#     for order in orders:
+#         user = order["user"]
+#         amount = order["amount"]
 
-        totals[user] = totals.get(user, 0) + amount
+#         totals[user] = totals.get(user, 0) + amount
 
-        if totals[user] > max_total:
-            max_total = totals[user]
-            result_user = user
+#         if totals[user] > max_total:
+#             max_total = totals[user]
+#             result_user = user
 
-    return result_user
+#     return result_user
                 
 
-orders = [
-    {"order_id": 1, "user": "A", "amount": 100},
-    {"order_id": 2, "user": "B", "amount": 200},
-    {"order_id": 3, "user": "A", "amount": 50},
-    {"order_id": 4, "user": "C", "amount": 300},
-    {"order_id": 5, "user": "B", "amount": 100},
+# orders = [
+#     {"order_id": 1, "user": "A", "amount": 100},
+#     {"order_id": 2, "user": "B", "amount": 200},
+#     {"order_id": 3, "user": "A", "amount": 50},
+#     {"order_id": 4, "user": "C", "amount": 300},
+#     {"order_id": 5, "user": "B", "amount": 100},
+# ]
+# print(get_top_user(orders))
+
+
+
+
+
+
+
+
+#!Q41) You are building a security system.
+
+# You are given a list of login attempts:
+
+# attempts = [
+#     {"user": "A", "status": "fail"},
+#     {"user": "B", "status": "success"},
+#     {"user": "A", "status": "fail"},
+#     {"user": "A", "status": "fail"},
+#     {"user": "B", "status": "fail"},
+#     {"user": "C", "status": "fail"},
+#     {"user": "C", "status": "fail"},
+#     {"user": "C", "status": "success"},
+# ]
+# # 🎯 Task
+
+# # Write a function:
+
+# # def users_to_lock(attempts, threshold):
+
+# # Return a list of users whose consecutive failed attempts reach the given threshold.
+
+# # Once a user has a "success", their failure count resets.
+
+# # Example
+
+# # If:
+
+# # threshold = 3
+
+# # Output:
+
+# # ["A"]
+
+# # Explanation:
+
+# # A → fail, fail, fail → lock
+
+# # B → no 3 consecutive fails
+
+# # C → only 2 consecutive fails before success
+
+# # Rules
+
+# # O(n)
+
+# # No sorting
+
+# # No nested full loops
+
+# # Clean dictionary usage
+
+# # Preserve order of first lock
+
+def users_to_lock(attempts, threshold):
+    fail_count = {}
+    locked = []
+
+    for attempt in attempts:
+        user = attempt["user"]
+        status = attempt["status"]
+
+        if status == "fail":
+            fail_count[user] = fail_count.get(user, 0) + 1
+    
+            if fail_count[user] >= threshold and user not in locked:
+                locked.append(user)
+        else:
+            fail_count[user] = 0
+
+    return locked
+attempts = [
+    {"user": "A", "status": "fail"},
+    {"user": "B", "status": "success"},
+    {"user": "A", "status": "fail"},
+    {"user": "A", "status": "fail"},
+    {"user": "B", "status": "fail"},
+    {"user": "C", "status": "fail"},
+    {"user": "C", "status": "fail"},
+    {"user": "C", "status": "success"},
 ]
-print(get_top_user(orders))
+threshold = int(input("Enter A Number : "))
+print(users_to_lock(attempts,threshold))
