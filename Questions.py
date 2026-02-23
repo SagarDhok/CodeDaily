@@ -1620,32 +1620,106 @@
 
 # # Preserve order of first lock
 
-def users_to_lock(attempts, threshold):
-    fail_count = {}
-    locked = []
+# def users_to_lock(attempts, threshold):
+#     fail_count = {}
+#     locked = []
 
-    for attempt in attempts:
-        user = attempt["user"]
-        status = attempt["status"]
+#     for attempt in attempts:
+#         user = attempt["user"]
+#         status = attempt["status"]
 
-        if status == "fail":
-            fail_count[user] = fail_count.get(user, 0) + 1
+#         if status == "fail":
+#             fail_count[user] = fail_count.get(user, 0) + 1
     
-            if fail_count[user] >= threshold and user not in locked:
-                locked.append(user)
-        else:
-            fail_count[user] = 0
+#             if fail_count[user] >= threshold and user not in locked:
+#                 locked.append(user)
+#         else:
+#             fail_count[user] = 0
 
-    return locked
-attempts = [
-    {"user": "A", "status": "fail"},
-    {"user": "B", "status": "success"},
-    {"user": "A", "status": "fail"},
-    {"user": "A", "status": "fail"},
-    {"user": "B", "status": "fail"},
-    {"user": "C", "status": "fail"},
-    {"user": "C", "status": "fail"},
-    {"user": "C", "status": "success"},
-]
-threshold = int(input("Enter A Number : "))
-print(users_to_lock(attempts,threshold))
+#     return locked
+# attempts = [
+#     {"user": "A", "status": "fail"},
+#     {"user": "B", "status": "success"},
+#     {"user": "A", "status": "fail"},
+#     {"user": "A", "status": "fail"},
+#     {"user": "B", "status": "fail"},
+#     {"user": "C", "status": "fail"},
+#     {"user": "C", "status": "fail"},
+#     {"user": "C", "status": "success"},
+# ]
+# threshold = int(input("Enter A Number : "))
+# print(users_to_lock(attempts,threshold))
+
+
+
+#! Q42)Today’s Question (Very Frequently Asked)
+# 🔥 Check if Two Strings Are Isomorphic
+# Problem
+# Two strings s and t are isomorphic if:
+# Characters in s can be replaced to get t
+# Each character maps to only one character
+# No two characters map to same character
+# Order must be preserved
+
+# Example 1
+# s = "egg"
+# t = "add"
+# Output: True
+
+# e → a
+# g → d
+
+# Example 2
+# s = "foo"
+# t = "bar"
+# Output: False
+
+# f → b
+# o → a
+# but second o tries mapping to r ❌
+
+# Example 3
+# s = "paper"
+# t = "title"
+
+# Output: True
+# Function Signature
+# def is_isomorphic(s, t):
+#     pass
+
+# Rules
+# O(n)
+# No sorting
+# No brute force
+# Must handle edge cases
+
+def is_isomorphic(s, t):
+    if len(s) != len(t):
+        return False
+
+    map_s_to_t = {}
+    map_t_to_s = {}
+
+    for c1, c2 in zip(s, t):
+        if c1 in map_s_to_t:
+            if map_s_to_t[c1] != c2:
+                return False
+        else:
+            if c2 in map_t_to_s:
+                return False
+            map_s_to_t[c1] = c2
+            map_t_to_s[c2] = c1
+
+    return True
+
+s = "egg"
+t = "add"
+print(is_isomorphic(s,t))
+
+s = "foo"
+t = "bar"
+print(is_isomorphic(s,t))
+
+s = "paper"
+t = "title"
+print(is_isomorphic(s,t))
