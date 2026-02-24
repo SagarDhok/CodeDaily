@@ -1693,33 +1693,81 @@
 # No brute force
 # Must handle edge cases
 
-def is_isomorphic(s, t):
-    if len(s) != len(t):
-        return False
+# def is_isomorphic(s, t):
+#     if len(s) != len(t):
+#         return False
 
-    map_s_to_t = {}
-    map_t_to_s = {}
+#     map_s_to_t = {}
+#     map_t_to_s = {}
 
-    for c1, c2 in zip(s, t):
-        if c1 in map_s_to_t:
-            if map_s_to_t[c1] != c2:
-                return False
-        else:
-            if c2 in map_t_to_s:
-                return False
-            map_s_to_t[c1] = c2
-            map_t_to_s[c2] = c1
+#     for c1, c2 in zip(s, t):
+#         if c1 in map_s_to_t:
+#             if map_s_to_t[c1] != c2:
+#                 return False
+#         else:
+#             if c2 in map_t_to_s:
+#                 return False
+#             map_s_to_t[c1] = c2
+#             map_t_to_s[c2] = c1
 
-    return True
+#     return True
 
-s = "egg"
-t = "add"
-print(is_isomorphic(s,t))
+# s = "egg"
+# t = "add"
+# print(is_isomorphic(s,t))
 
-s = "foo"
-t = "bar"
-print(is_isomorphic(s,t))
+# s = "foo"
+# t = "bar"
+# print(is_isomorphic(s,t))
 
-s = "paper"
-t = "title"
-print(is_isomorphic(s,t))
+# s = "paper"
+# t = "title"
+# print(is_isomorphic(s,t))
+
+
+
+#! Q43) Given a list of integers nums, return a new list such that:
+
+# Each element at index i is the product of all numbers except nums[i].
+
+# Example 1
+# nums = [1, 2, 3, 4]
+# Output = [24, 12, 8, 6]
+# Example 2
+# nums = [0, 1, 2, 3]
+# Output = [6, 0, 0, 0]
+# ❗ Important Rules
+
+# Do NOT use division
+
+# Time complexity must be O(n)
+
+# Extra space allowed only for output array
+
+# No nested loops
+
+# Function Signature
+# def product_except_self(nums):
+#     pass
+
+def product_except_self(nums):
+    n = len(nums)
+    result = [1] * n
+
+    prefix = 1
+    for i in range(n):
+        result[i] = prefix
+        prefix *= nums[i]
+
+    suffix = 1
+    for i in range(n - 1, -1, -1):
+        result[i] *= suffix
+        suffix *= nums[i]
+
+    return result
+                
+nums = [1, 2, 3, 4]
+print(product_except_self(nums))
+
+nums = [0, 1, 2, 3]
+print(product_except_self(nums))
