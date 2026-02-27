@@ -1772,3 +1772,25 @@
 # nums = [0, 1, 2, 3]
 # print(product_except_self(nums))
 
+
+#! Q44) Find Maximum Consecutive 1s
+
+# Input:
+
+# [1,1,0,1,1,1]
+
+# Output:
+
+# 3
+
+lst = [1,1,0,1,1,1]
+
+count = 0
+max_count = 0
+for num in lst:
+  if num==1:
+    count +=1
+    max_count = max(max_count,count)
+  else:
+   count = 0
+print(max_count)      
