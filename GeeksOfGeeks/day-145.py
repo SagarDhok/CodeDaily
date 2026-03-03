@@ -52,3 +52,31 @@ print(s.rowWithMax1s(arr))
 
 arr= [[0,0], [0,0]]
 print(s.rowWithMax1s(arr))
+
+
+
+
+class Solution:
+    def rowWithMax1s(self, arr):
+        max_count = 0
+        max_row = -1
+        
+        for i in range(len(arr)):
+            count = arr[i].count(1)
+            
+            if count > max_count:
+                max_count = count
+                max_row = i
+        
+        return max_row
+    
+
+s  = Solution()
+arr = [[0,1,1,1], [0,0,1,1], [1,1,1,1], [0,0,0,0]]
+print(s.rowWithMax1s(arr))
+
+arr = [[0,0], [1,1]]
+print(s.rowWithMax1s(arr))
+
+arr= [[0,0], [0,0]]
+print(s.rowWithMax1s(arr))
