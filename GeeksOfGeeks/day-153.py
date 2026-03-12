@@ -1,6 +1,7 @@
 
 
 
+
 class Solution:
     def floorSqrt(self, n): 
         left = 1
@@ -24,3 +25,4 @@ class Solution:
 s = Solution()
 n = int(input("Enter A Number : "))
 print(s.floorSqrt(n))
+
