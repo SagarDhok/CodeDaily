@@ -50,3 +50,6 @@ class Solution:
                 result.append(arr[dq[0]])
 
         return result
+
+
+
