@@ -1800,81 +1800,108 @@
 
 
 
-while(True):
-    def calmonthday():
-        lst = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-        monthday = 0
-        i = 0
-        while (i < month):
-            monthday += lst[i]
-            i += 1
-        return monthday
-    while(True):
-        try:
-            month = int(input("enter month no => "))
-            if(0<month<13):
-                print("month is {}".format(month))
-                break
-            else:
-                print("enter valid month from 1 to 12\nTRY AGAIN")
-        except ValueError:
-            print("dont enter alphanumric and special symbols")
-    try:
-        while(True):
-            year = int(input("enter a year => "))
-            if(year>0):
-                print("year is {}".format(year))
-                break
-            elif(year==0):
-                print("year should be greater than 0/nTRY AGAIN")
-            else:
-                print("year cant be negative\nplese enter positive year")
-    except ValueError:
-        print("dont enter alphanumric and special symbols")
-    else:
-        dwoly = (year-2000)*365
-        #if dwoly is negative
-        if(dwoly < 0):
-            leapdays = 0
-            for years in range(year,2000):
-                if(years%4==0 and years%100!=0 or years%400==0):
-                    leapdays -= 1
-            dwly = dwoly + leapdays
-            monthdays = calmonthday()
-            if ((month > 2) and (year % 4 == 0 and year % 100 != 0 or year % 400 == 0)):
-                monthdays += 1
-            totaldays = dwly + monthdays
-            date = totaldays % 7
-            print(date)
-        #if dwoly is positive
-        else:
-            leapdays = 0
-            for years in range(2000, year+1):
-                if (years % 4 == 0 and years % 100 != 0 or years % 400 == 0):
-                    leapdays += 1
-            dwly = dwoly + leapdays
-            monthdays = calmonthday()
-            if((month > 2) and (year%4==0 and year%100!=0 or year%400==0)):
-                monthdays += 1
-            totaldays = dwly + monthdays
-            #calculation for days
-            date = totaldays % 7
-            print(date)
-        print("sa    su    mo    tu    we    th    fr")
-        lst = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-        if(years%4==0 and years%100!=0 or years%400==0):
-            lst = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-        column = 1
-        for data in range(1,lst[month]+1):
-            if(data ==1):
-                for x in range(date):
-                    print("00",end="    ")
-                    column += 1
-            if(column!=1 and column%7==1):
-                print("\n")
-            if(len(str(data))==1):
-                print("0{}".format(data),end="    ")
-                column += 1
-            else:
-                print(data,end="    ")
-                column += 1
+# while(True):
+#     def calmonthday():
+#         lst = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+#         monthday = 0
+#         i = 0
+#         while (i < month):
+#             monthday += lst[i]
+#             i += 1
+#         return monthday
+#     while(True):
+#         try:
+#             month = int(input("enter month no => "))
+#             if(0<month<13):
+#                 print("month is {}".format(month))
+#                 break
+#             else:
+#                 print("enter valid month from 1 to 12\nTRY AGAIN")
+#         except ValueError:
+#             print("dont enter alphanumric and special symbols")
+#     try:
+#         while(True):
+#             year = int(input("enter a year => "))
+#             if(year>0):
+#                 print("year is {}".format(year))
+#                 break
+#             elif(year==0):
+#                 print("year should be greater than 0/nTRY AGAIN")
+#             else:
+#                 print("year cant be negative\nplese enter positive year")
+#     except ValueError:
+#         print("dont enter alphanumric and special symbols")
+#     else:
+#         dwoly = (year-2000)*365
+#         #if dwoly is negative
+#         if(dwoly < 0):
+#             leapdays = 0
+#             for years in range(year,2000):
+#                 if(years%4==0 and years%100!=0 or years%400==0):
+#                     leapdays -= 1
+#             dwly = dwoly + leapdays
+#             monthdays = calmonthday()
+#             if ((month > 2) and (year % 4 == 0 and year % 100 != 0 or year % 400 == 0)):
+#                 monthdays += 1
+#             totaldays = dwly + monthdays
+#             date = totaldays % 7
+#             print(date)
+#         #if dwoly is positive
+#         else:
+#             leapdays = 0
+#             for years in range(2000, year+1):
+#                 if (years % 4 == 0 and years % 100 != 0 or years % 400 == 0):
+#                     leapdays += 1
+#             dwly = dwoly + leapdays
+#             monthdays = calmonthday()
+#             if((month > 2) and (year%4==0 and year%100!=0 or year%400==0)):
+#                 monthdays += 1
+#             totaldays = dwly + monthdays
+#             #calculation for days
+#             date = totaldays % 7
+#             print(date)
+#         print("sa    su    mo    tu    we    th    fr")
+#         lst = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+#         if(years%4==0 and years%100!=0 or years%400==0):
+#             lst = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+#         column = 1
+#         for data in range(1,lst[month]+1):
+#             if(data ==1):
+#                 for x in range(date):
+#                     print("00",end="    ")
+#                     column += 1
+#             if(column!=1 and column%7==1):
+#                 print("\n")
+#             if(len(str(data))==1):
+#                 print("0{}".format(data),end="    ")
+#                 column += 1
+#             else:
+#                 print(data,end="    ")
+#                 column += 1
+
+
+#! Q 46)
+# Write a Python function to find two numbers in a list that add up to a target sum.
+
+# Return their indices.
+
+# Example:
+# Input: nums = [2, 7, 11, 15], target = 9  
+# Output: [0, 1]   # because 2 + 7 = 9
+
+def two_sum(nums, target):
+    seen = {}
+
+    for i, num in enumerate(nums):
+        diff = target - num
+
+        if diff in seen:
+            return [seen[diff], i]
+
+        seen[num] = i
+
+    return None
+
+nums = [2, 7, 11, 15]
+target = 9  
+print(two_sum(nums,target))
