@@ -80,3 +80,5 @@ print(s.solve(board))
 board = [["X"]]
 print(s.solve(board))
 
+
+
