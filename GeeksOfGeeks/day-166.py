@@ -1,6 +1,6 @@
 
 
-#! 6. Zigzag Conversion
+#! . Zigzag Conversion
 # Medium
 # Topics
 # premium lock icon
