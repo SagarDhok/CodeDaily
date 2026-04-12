@@ -22,3 +22,9 @@ def median(nums1, nums2):
 nums1 = [0,1,7,9,2,4,3]
 nums2 = [8,6,10]
 print(median(nums1, nums2))
+
+
+
+
+
+
