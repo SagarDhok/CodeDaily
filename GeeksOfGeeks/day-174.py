@@ -47,3 +47,7 @@ class Solution:
         
         backtrack([])
         return res
+    
+obj = Solution()
+s = input("Enter A Text : ")
+print(obj.findPermutation(s))
