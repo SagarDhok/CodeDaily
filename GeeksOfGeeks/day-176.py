@@ -76,3 +76,5 @@ print(s.findPair(arr,x))
 arr = [90, 70, 20, 80, 50]
 x = 45
 print(s.findPair(arr,x))
+
+
