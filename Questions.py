@@ -1889,21 +1889,37 @@
 # Input: nums = [2, 7, 11, 15], target = 9  
 # Output: [0, 1]   # because 2 + 7 = 9
 
-def two_sum(nums, target):
-    seen = {}
+# def two_sum(nums, target):
+#     seen = {}
 
-    for i, num in enumerate(nums):
-        diff = target - num
+#     for i, num in enumerate(nums):
+#         diff = target - num
 
-        if diff in seen:
-            return [seen[diff], i]
+#         if diff in seen:
+#             return [seen[diff], i]
 
-        seen[num] = i
+#         seen[num] = i
 
-    return None
+#     return None
 
-nums = [2, 7, 11, 15]
-target = 9  
-print(two_sum(nums,target))
+# nums = [2, 7, 11, 15]
+# target = 9  
+# print(two_sum(nums,target))
 
 
+
+
+#! Q 47) Intersection of Two Arrays I
+class Solution:
+    def intersection(self, nums1, nums2):
+        
+       lst = []
+       for i in nums1:
+         if i in nums2 and i not in lst:
+            lst.append(i)
+       return lst
+ 
+s= Solution()
+nums1 = [4,9,5]
+nums2 = [9,4,9,8,4]
+print(s.intersection(nums1,nums2))
