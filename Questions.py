@@ -1923,3 +1923,16 @@ s= Solution()
 nums1 = [4,9,5]
 nums2 = [9,4,9,8,4]
 print(s.intersection(nums1,nums2))
+
+
+#! Q 48 Arranging Coins
+
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+        i = 1
+        while n >= i:
+            n -= i
+            i += 1
+        return i - 1
+s = Solution()
+print(s.arrangeCoins(n = int(input("Enter A number : " ))))
