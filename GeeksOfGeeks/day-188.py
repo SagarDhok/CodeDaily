@@ -41,3 +41,5 @@ sol = Solution()
 
 n = int(input("Enter A Value : "))
 print(sol.isPerfect(n))
+
+
