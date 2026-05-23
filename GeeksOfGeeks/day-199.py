@@ -1,12 +1,6 @@
 
 
-Search...
-Courses
-Tutorials
-Practice
-Jobs
 
-avatar
 
 
 #! Alien Dictionary
