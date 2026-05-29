@@ -1927,12 +1927,24 @@ print(s.intersection(nums1,nums2))
 
 #! Q 48 Arranging Coins
 
-class Solution:
-    def arrangeCoins(self, n: int) -> int:
-        i = 1
-        while n >= i:
-            n -= i
-            i += 1
-        return i - 1
-s = Solution()
-print(s.arrangeCoins(n = int(input("Enter A number : " ))))
+# class Solution:
+#     def arrangeCoins(self, n: int) -> int:
+#         i = 1
+#         while n >= i:
+#             n -= i
+#             i += 1
+#         return i - 1
+# s = Solution()
+# print(s.arrangeCoins(n = int(input("Enter A number : " ))))
+
+
+
+#!Q 49) Write a program that takes an integer n as input and prints all numbers having exactly n digits.
+
+n = int(input("Enter A Number : "))
+
+start = 10**(n-1)
+end = (10**n)-1
+
+for val in range(start,end+1):
+   print(val)
