@@ -1,52 +1,47 @@
 
-#! Roman to Integer
-# Difficulty: EasyAccuracy: 43.31%Submissions: 215K+Points: 2Average Time: 20m
-# Given a string s in Roman number format, your task is to convert it to an integer. Various symbols and their values are given below.
-# Note: I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
+#! Selection Sort
+# Difficulty: EasyAccuracy: 64.33%Submissions: 251K+Points: 2Average Time: 15m
+# Given an array arr, use selection sort to sort arr[] in increasing order.
 
-# Examples:
+# Examples :
 
-# Input: s = "IX"
-# Output: 9
-# Explanation: IX is a Roman symbol which represents 10 – 1 = 9.
-# Input: s = "XL"
-# Output: 40
-# Explanation: XL is a Roman symbol which represents 50 – 10 = 40.
-# Input: s = "MCMIV"
-# Output: 1904
-# Explanation: M is 1000, CM is 1000 – 100 = 900, and IV is 4. So we have total as 1000 + 900 + 4 = 1904.
+# Input: arr[] = [4, 1, 3, 9, 7]
+# Output: [1, 3, 4, 7, 9]
+# Explanation: Maintain sorted (in bold) and unsorted subarrays. Select 1. Array becomes 1 4 3 9 7. Select 3. Array becomes 1 3 4 9 7. Select 4. Array becomes 1 3 4 9 7. Select 7. Array becomes 1 3 4 7 9. Select 9. Array becomes 1 3 4 7 9.
+# Input: arr[] = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+# Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# Input: arr[] = [38, 31, 20, 14, 30]
+# Output: [14, 20, 30, 31, 38]
+# Constraints:
+# 1 ≤ arr.size() ≤ 103
+# 1 ≤ arr[i] ≤ 106
+
 
 class Solution:
-    def romanToDecimal(self, s): 
-        
-        values = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000
-        }
-        
-        total = 0
-        
-        for i in range(len(s) - 1):
-            
-            if values[s[i]] < values[s[i + 1]]:
-                total -= values[s[i]]
-            else:
-                total += values[s[i]]
-        
-        total += values[s[-1]]
-        
-        return total
+    
+    def selectionSort(self, arr):
+
+        n = len(arr)
+
+        for i in range(n):
+
+            min_index = i
+
+            for j in range(i + 1, n):
+
+                if arr[j] < arr[min_index]:
+                    min_index = j
+
+            arr[i], arr[min_index] = arr[min_index], arr[i]
+
+        return arr
 s = Solution()
-s = "IX"
-print(s.romanToDecimal(s))
+arr = [4, 1, 3, 9, 7]
+print(s.selectionSort(arr))
 
-s = "XL"
-print(s.romanToDecimal(s))
 
-s = "MCMIV"
-print(s.romanToDecimal(s))
+arr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+print(s.selectionSort(arr))
+
+arr = [38, 31, 20, 14, 30]
+print(s.selectionSort(arr))
