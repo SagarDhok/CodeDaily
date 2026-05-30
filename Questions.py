@@ -1910,19 +1910,19 @@
 
 
 #! Q 47) Intersection of Two Arrays I
-class Solution:
-    def intersection(self, nums1, nums2):
+# class Solution:
+#     def intersection(self, nums1, nums2):
         
-       lst = []
-       for i in nums1:
-         if i in nums2 and i not in lst:
-            lst.append(i)
-       return lst
+#        lst = []
+#        for i in nums1:
+#          if i in nums2 and i not in lst:
+#             lst.append(i)
+#        return lst
  
-s= Solution()
-nums1 = [4,9,5]
-nums2 = [9,4,9,8,4]
-print(s.intersection(nums1,nums2))
+# s= Solution()
+# nums1 = [4,9,5]
+# nums2 = [9,4,9,8,4]
+# print(s.intersection(nums1,nums2))
 
 
 #! Q 48 Arranging Coins
@@ -1941,10 +1941,10 @@ print(s.intersection(nums1,nums2))
 
 #!Q 49) Write a program that takes an integer n as input and prints all numbers having exactly n digits.
 
-n = int(input("Enter A Number : "))
+# n = int(input("Enter A Number : "))
 
-start = 10**(n-1)
-end = (10**n)-1
+# start = 10**(n-1)
+# end = (10**n)-1
 
-for val in range(start,end+1):
-   print(val)
+# for val in range(start,end+1):
+#    print(val)
