@@ -45,3 +45,6 @@ class Solution:
 s = Solution()
 num = int(input("Enter A Number : " ))
 print(s.isPerfectSquare(num))
+
+
+
