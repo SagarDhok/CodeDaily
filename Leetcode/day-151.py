@@ -68,7 +68,7 @@ s = "aabb"
 print(sol.firstUniqChar(s))
 
 
-#! Approach - 2
+#! Approach - Brute - Force
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         for i in range(len(s)):
