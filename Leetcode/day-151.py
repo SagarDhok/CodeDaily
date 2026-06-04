@@ -39,7 +39,36 @@
 # s consists of only lowercase English letters.
 
 
+
 #! Approach - 1
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        freq = {}
+
+        for ch in s:
+            if ch in freq:
+                freq[ch] += 1
+            else:
+                freq[ch] = 1
+
+        for i, ch in enumerate(s):
+            if freq[ch] == 1:
+                return i
+
+        return -1
+    
+sol = Solution()
+s = "leetcode"
+print(sol.firstUniqChar(s))
+
+s = "loveleetcode"
+print(sol.firstUniqChar(s))
+
+s = "aabb"
+print(sol.firstUniqChar(s))
+
+
+#! Approach - 2
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         for i in range(len(s)):
@@ -64,27 +93,3 @@ print(sol.firstUniqChar(s))
 s = "aabb"
 print(sol.firstUniqChar(s))
 
-
-#! Approach - 2
-class Solution:
-    def firstUniqChar(self, s: str) -> int:
-        freq = {}
-
-        for ch in s:
-            freq[ch] = freq.get(ch, 0) + 1
-
-        for i, ch in enumerate(s):
-            if freq[ch] == 1:
-                return i
-
-        return -1
-    
-sol = Solution()
-s = "leetcode"
-print(sol.firstUniqChar(s))
-
-s = "loveleetcode"
-print(sol.firstUniqChar(s))
-
-s = "aabb"
-print(sol.firstUniqChar(s))
