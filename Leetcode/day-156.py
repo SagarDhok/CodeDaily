@@ -41,3 +41,4 @@ s = Solution()
 s = input("Enter Text  :  ")
 t = input("Enter Text  : ")
 print(s.isSubsequence(s,t))
+
