@@ -26,3 +26,4 @@ arr = [86, 39, 90, 67, 84, 66, 62]
 x = 42
 y = 12
 print(s.minDist(arr,x,y))
+
