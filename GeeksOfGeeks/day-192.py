@@ -37,3 +37,6 @@ print(s.maxValue(arr))
 
 arr = [1, 2, 3]
 print(s.maxValue(arr))
+
+
+

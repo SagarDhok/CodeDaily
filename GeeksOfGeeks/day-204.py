@@ -45,3 +45,4 @@ print(s.selectionSort(arr))
 
 arr = [38, 31, 20, 14, 30]
 print(s.selectionSort(arr))
+
